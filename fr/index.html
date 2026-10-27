@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Emilie Tissot — Product Designer senior à Paris. Design produit de bout en bout, augmenté par l'IA.">
+<title>Emilie Tissot — Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EF;
+    --ink:#16152B;
+    --ink-soft:#6B6980;
+    --line: rgba(22,21,43,0.12);
+    --poppy:#FF4B3E;
+    --cobalt:#2A3EFF;
+    --butter:#FFC93C;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    line-height:1.03;
+  }
+  em{font-style:italic;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 40px;}
+
+  .tbd{
+    position:relative;
+    border-bottom:1.5px dashed var(--ink-soft);
+  }
+  .tbd::after{
+    content:"draft — à remplacer";
+    position:absolute;
+    left:0; top:100%;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.58rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    padding-top:3px;
+  }
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,247,239,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:20px 40px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand .dot{
+    width:10px; height:10px; border-radius:50%;
+    background:var(--poppy);
+  }
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+  .nav-links{display:flex; align-items:center; gap:32px;}
+  .nav-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    opacity:0.65;
+    transition:opacity .2s, color .2s;
+  }
+  .nav-links a:hover{opacity:1; color:var(--poppy);}
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    background:var(--ink);
+    color:var(--paper);
+    padding:9px 16px;
+    border-radius:999px;
+    font-weight:600;
+  }
+  @media (max-width:760px){ .nav-links{display:none;} }
+
+  /* HERO */
+  .hero{
+    padding:110px 0 88px; border-bottom:1px solid var(--line); position:relative; overflow:hidden;
+    background:
+      radial-gradient(circle at 85% -15%, rgba(255,75,62,0.22), transparent 55%),
+      radial-gradient(circle at -12% 115%, rgba(42,62,255,0.18), transparent 55%),
+      radial-gradient(circle at 62% 35%, rgba(255,201,60,0.16), transparent 45%),
+      var(--paper);
+  }
+  .hero .eyebrow{margin-bottom:20px;}
+  .hero h1{
+    font-size:clamp(2.5rem, 6vw, 5rem);
+    font-weight:700;
+    max-width:940px;
+    letter-spacing:-0.01em;
+    position:relative; z-index:1;
+  }
+  .hero h1 em{color:var(--poppy); font-weight:900;}
+  .hero .lead{
+    max-width:500px; margin-top:26px;
+    color:var(--ink-soft); font-size:1.02rem;
+    position:relative; z-index:1;
+  }
+  .hero-foot{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-top:56px; flex-wrap:wrap; gap:24px;
+    position:relative; z-index:1;
+  }
+  .hero-meta{display:flex; gap:10px; flex-wrap:wrap;}
+  .hero-meta span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    padding:7px 13px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .hero-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--paper);
+    background:var(--ink);
+    padding:12px 20px;
+    border-radius:999px;
+    transition:background .2s, gap .2s;
+  }
+  .hero-cta:hover{background:var(--poppy); gap:13px;}
+
+  .section-pad{padding:96px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:8px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(2rem, 3.6vw, 2.8rem); font-weight:600;}
+  .section-head p{max-width:300px; color:var(--ink-soft); font-size:0.92rem;}
+
+  /* WORK — colorful list rows */
+  .work{border-bottom:1px solid var(--line);}
+  .work-list{margin-top:44px;}
+  .row{
+    display:grid;
+    grid-template-columns: 72px 1.2fr 1fr 100px 26px;
+    align-items:center;
+    gap:22px;
+    padding:24px 20px;
+    margin:0 -20px;
+    border-top:3px solid transparent;
+    border-bottom:1px solid var(--line);
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .work-list .row:first-child{border-top:1px solid var(--line);}
+  .row[data-c="poppy"]:hover{border-top-color:var(--poppy); background:rgba(255,75,62,0.05);}
+  .row[data-c="cobalt"]:hover{border-top-color:var(--cobalt); background:rgba(42,62,255,0.05);}
+  .row[data-c="butter"]:hover{border-top-color:var(--butter); background:rgba(255,201,60,0.08);}
+  .thumb{
+    width:64px; height:64px; flex:none;
+    border-radius:12px;
+    border:1.5px dashed rgba(22,21,43,0.25);
+    background:rgba(22,21,43,0.03);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:700;
+    font-size:1.4rem;
+    color:rgba(22,21,43,0.3);
+    text-align:center; line-height:1.2;
+  }
+  .row[data-c="poppy"] .thumb{background:rgba(255,75,62,0.08); border-color:rgba(255,75,62,0.4); color:var(--poppy);}
+  .row[data-c="cobalt"] .thumb{background:rgba(42,62,255,0.08); border-color:rgba(42,62,255,0.4); color:var(--cobalt);}
+  .row[data-c="butter"] .thumb{background:rgba(255,201,60,0.14); border-color:#B8860B; color:#B8860B;}
+  .row-main{display:flex; flex-direction:column; gap:4px;}
+  .row .code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; font-weight:600;
+  }
+  .row[data-c="poppy"] .code{color:var(--poppy);}
+  .row[data-c="cobalt"] .code{color:var(--cobalt);}
+  .row[data-c="butter"] .code{color:#B8860B;}
+  .row h3{font-size:clamp(1.3rem, 2.2vw, 1.7rem); font-weight:600;}
+  .row .tags{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--ink-soft);
+  }
+  .status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    display:inline-flex; align-items:center; gap:7px;
+    color:var(--ink-soft);
+  }
+  .status::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--ink-soft); flex:none;}
+  .status[data-s="live"]{color:#1F7A53;}
+  .status[data-s="live"]::before{background:#1F7A53;}
+  .status[data-s="draft"]{color:#B8860B;}
+  .status[data-s="draft"]::before{background:#B8860B;}
+  .row .arrow{
+    justify-self:end; font-size:1.3rem;
+    transition:transform .25s ease;
+  }
+  .row:hover .arrow{transform:translate(4px,-4px);}
+  .row-desc{
+    grid-column:1 / -1;
+    font-size:0.9rem; color:var(--ink-soft);
+    max-width:640px; margin-top:-4px;
+    margin-left:94px;
+  }
+  @media (max-width:760px){
+    .row{grid-template-columns:52px 1fr 90px 22px; gap:14px;}
+    .row .tags{display:none;}
+    .row-desc{margin-left:0;}
+  }
+
+  /* ABOUT */
+  .about{border-bottom:1px solid var(--line); background:var(--paper);}
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:80px;}
+  .about blockquote{
+    margin:16px 0 0;
+    font-family:'Fraunces', serif;
+    font-style:italic; font-weight:600;
+    font-size:clamp(1.5rem, 2.6vw, 2.1rem);
+    max-width:420px;
+    color:var(--cobalt);
+  }
+  .about-body p{color:var(--ink-soft); max-width:520px;}
+  .facts{margin-top:36px; display:grid; grid-template-columns:1fr 1fr; gap:26px 36px;}
+  .facts dt{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:4px;
+  }
+  .facts dd{margin:0; font-size:0.97rem; font-weight:500;}
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr; gap:40px;} }
+
+  /* SKILLS */
+  .skills{border-bottom:1px solid var(--line);}
+  .chip-grid{display:flex; flex-wrap:wrap; gap:12px; margin-top:36px;}
+  .chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    padding:10px 18px;
+    border-radius:999px;
+    border:1.5px solid var(--ink);
+    transition:transform .2s ease;
+  }
+  .chip:hover{transform:translateY(-2px);}
+  .chip:nth-child(odd){border-color:var(--poppy); color:var(--poppy);}
+  .chip:nth-child(even){border-color:var(--cobalt); color:var(--cobalt);}
+
+  /* CONTACT */
+  .contact{background:var(--ink); color:var(--paper);}
+  .contact .eyebrow{color:rgba(251,247,239,0.5);}
+  .contact h2{
+    font-size:clamp(2.3rem, 5.6vw, 4rem);
+    font-weight:900; font-style:italic;
+    max-width:760px; margin-top:16px;
+  }
+  .contact h2 em{color:var(--butter);}
+  .contact-email{
+    display:inline-block;
+    margin-top:36px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.3rem, 3vw, 2rem);
+    border-bottom:2px solid var(--poppy);
+    padding-bottom:6px;
+    transition:color .2s, border-color .2s;
+  }
+  .contact-email:hover{color:var(--poppy);}
+  .social-row{
+    margin-top:52px;
+    display:flex; gap:32px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .social-row a{
+    opacity:0.75;
+    padding-bottom:4px;
+    border-bottom:1px solid transparent;
+    transition:opacity .2s, border-color .2s, color .2s;
+  }
+  .social-row a:nth-child(1):hover{color:var(--cobalt); border-color:var(--cobalt); opacity:1;}
+  .social-row a:nth-child(2):hover{color:var(--poppy); border-color:var(--poppy); opacity:1;}
+  .social-row a:nth-child(3):hover{color:var(--butter); border-color:var(--butter); opacity:1;}
+  footer{padding:28px 0 40px; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; opacity:0.5;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .lang{display:inline-flex; align-items:center; gap:2px; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; border:1px solid var(--line); border-radius:999px; padding:3px;}
+  .lang a, .lang span{padding:5px 10px; border-radius:999px; line-height:1; text-decoration:none;}
+  .lang span{background:var(--ink); color:var(--paper); font-weight:600;}
+  .lang a{opacity:0.65; color:inherit;}
+  .lang a:hover{opacity:1;}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%2316152B'%3E%3Crect x='10' y='10' width='80' height='14'/%3E%3Crect x='10' y='10' width='14' height='80'/%3E%3Crect x='10' y='44' width='48' height='14'/%3E%3Crect x='10' y='76' width='48' height='14'/%3E%3Crect x='63' y='10' width='14' height='80'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="dot"></span>
+      <span class="wordmark">Emilie Tissot</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#travail">Travail</a>
+      <a href="#apropos">À propos</a>
+      <a href="#competences">Compétences</a>
+    </nav>
+    <div class="nav-right"><div class="lang"><a href="../index.html" hreflang="en" lang="en">EN</a><span>FR</span></div><a class="nav-cta" href="#contact">Me contacter</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 class="reveal">Des idées floues aux produits <em>qu'on utilise vraiment.</em></h1>
+    <p class="lead reveal">Product Designer senior, 9 ans d'expérience. Je conçois des expériences de bout en bout, augmentée par l'IA, pour des missions qui ont du sens.</p>
+    <div class="hero-foot reveal">
+      <div class="hero-meta">
+        <span>9 ans d'XP</span>
+        <span>Basée à Paris</span>
+        <span>Meero → Doctolib</span>
+        <span>Bout en bout</span>
+      </div>
+      <a class="hero-cta" href="#travail">Voir le travail →</a>
+    </div>
+  </div>
+</section>
+
+<section id="travail" class="work section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Sélection</p>
+        <h2>Neuf projets, un fil conducteur</h2>
+      </div>
+      <p>Descriptions et résultats sont encore des ébauches à remplacer.</p>
+    </div>
+
+    <div class="work-list reveal">
+      <a class="row" data-c="poppy" href="case-plateforme-client.html">
+        <div class="thumb">M</div>
+        <div class="row-main">
+          <span class="code">MEERO / 01</span>
+          <h3>Plateforme client</h3>
+        </div>
+        <span class="tags tbd">Recherche · UX · UI · Design system</span>
+        <span class="status" data-s="live">En ligne</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Refonte de la plateforme de commande utilisée par les clients Meero pour réserver et suivre leurs prestations photo.</p>
+      </a>
+      <a class="row" data-c="cobalt" href="case-tunnel-achat.html">
+        <div class="thumb">M</div>
+        <div class="row-main">
+          <span class="code">MEERO / 02</span>
+          <h3>Tunnel d'achat</h3>
+        </div>
+        <span class="tags tbd">UX research · Wireframes · Tests</span>
+        <span class="status" data-s="live">En ligne</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Optimisation du parcours d'achat pour réduire l'abandon en cours de commande.</p>
+      </a>
+      <a class="row" data-c="butter" href="case-doctolib.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 03</span>
+          <h3 class="tbd">Nom du projet</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici un projet mené chez Doctolib : quel produit, quel problème patient/praticien, ton rôle exact.</p>
+      </a>
+      <a class="row" data-c="poppy" href="case-profile-italy.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 04</span>
+          <h3>Profile improvements in Italy</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+      <a class="row" data-c="cobalt" href="case-autocomplete.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 05</span>
+          <h3>Autocomplete</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+      <a class="row" data-c="butter" href="case-map-experience.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 06</span>
+          <h3>Map experience</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+      <a class="row" data-c="poppy" href="case-filters.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 07</span>
+          <h3>Filters</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+      <a class="row" data-c="cobalt" href="case-pre-qualification.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 08</span>
+          <h3>Pre-qualification</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+      <a class="row" data-c="butter" href="case-search-results.html">
+        <div class="thumb">D</div>
+        <div class="row-main">
+          <span class="code">DOCTOLIB / 09</span>
+          <h3>Search results page redesign</h3>
+        </div>
+        <span class="tags tbd">À compléter</span>
+        <span class="status" data-s="draft">Brouillon</span>
+        <span class="arrow">→</span>
+        <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="apropos" class="about section-pad">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <p class="eyebrow">À propos</p>
+      <blockquote>« Polyvalente, augmentée par l'IA, j'aime les missions porteuses de sens. »</blockquote>
+    </div>
+    <div class="about-body reveal">
+      <p>Product Designer senior avec 9 ans d'expérience, j'ai construit ma pratique entre la photo tech et la healthtech — deux mondes où le produit doit servir des personnes réelles, vite et bien. J'aime intervenir sur l'ensemble du cycle, de la recherche à l'itération post-lancement, et j'intègre les outils IA à mon flux de travail pour aller plus loin, plus vite.</p>
+      <dl class="facts">
+        <div><dt>Aujourd'hui</dt><dd>Senior Product Designer, Doctolib</dd></div>
+        <div><dt class="tbd">20XX – 20XX</dt><dd>Product Designer, Meero</dd></div>
+        <div><dt>Basée à</dt><dd>Paris, France</dd></div>
+        <div><dt>Approche</dt><dd>Bout en bout, AI-augmentée</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="competences" class="skills section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Boîte à outils</p>
+        <h2>Ce que je sais faire, du brief au ship.</h2>
+      </div>
+    </div>
+    <div class="chip-grid reveal">
+      <span class="chip">Recherche utilisateur</span>
+      <span class="chip">Architecture de l'information</span>
+      <span class="chip">Wireframing</span>
+      <span class="chip">UI Design</span>
+      <span class="chip">Design system</span>
+      <span class="chip">Prototypage (Figma)</span>
+      <span class="chip">Tests utilisateurs</span>
+      <span class="chip">Workflows AI-augmentés</span>
+      <span class="chip">Facilitation d'ateliers</span>
+      <span class="chip">Accessibilité</span>
+      <span class="chip">Product strategy</span>
+      <span class="chip">Design ops</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section-pad">
+  <div class="wrap reveal">
+    <p class="eyebrow">Contact</p>
+    <h2>Discutons de votre <em>prochain produit.</em></h2>
+    <a class="contact-email tbd" href="mailto:hello@emilietissot.design">hello@emilietissot.design</a>
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/emilietissot" target="_blank" rel="noopener">Behance</a>
+      <a href="https://dribbble.com/EmilieTiss" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <footer>© <span id="yr"></span> Emilie Tissot — Product Designer, Paris</footer>
+  </div>
+</section>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
