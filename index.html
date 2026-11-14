@@ -171,7 +171,7 @@
   .work-list{margin-top:44px;}
   .row{
     display:grid;
-    grid-template-columns: 72px 1.2fr 1fr 100px 26px;
+    grid-template-columns: 72px 1fr 100px 26px;
     align-items:center;
     gap:22px;
     padding:24px 20px;
@@ -208,6 +208,7 @@
   .row[data-c="butter"] .code{color:#B8860B;}
   .row h3{font-size:clamp(1.3rem, 2.2vw, 1.7rem); font-weight:600;}
   .row .tags{
+    grid-column:1 / -1; margin-left:94px; margin-top:-10px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
     color:var(--ink-soft);
@@ -236,7 +237,7 @@
   }
   @media (max-width:760px){
     .row{grid-template-columns:52px 1fr 90px 22px; gap:14px;}
-    .row .tags{grid-column:2 / -1; grid-row:2;}
+    .row .tags{margin-left:0;}
     .row-desc{margin-left:0;}
   }
 
@@ -391,10 +392,10 @@
           <span class="code">01 — Filters</span>
           <h3>From a hidden button to +55% usage</h3>
         </div>
-        <span class="tags">Doctolib — Q2 2022 — Desktop, mobile web &amp; app — France &amp; Germany</span>
         <span class="status" data-s="draft">Draft</span>
         <span class="arrow">→</span>
         <p class="row-desc">I made filters visible in search results, validated with data, user research and A/B tests, then designed how the whole filtering system should grow.</p>
+        <span class="tags">Doctolib — Q2 2022 — Desktop, mobile web &amp; app — France &amp; Germany</span>
       </a>
       <a class="row" data-c="cobalt" href="case-profile-italy.html">
         <div class="thumb">D</div>
@@ -402,10 +403,10 @@
           <span class="code">DOCTOLIB / 02</span>
           <h3>Profile improvements in Italy</h3>
         </div>
-        <span class="tags tbd">To be filled in</span>
         <span class="status" data-s="draft">Draft</span>
         <span class="arrow">→</span>
         <p class="row-desc tbd">Describe the initial problem here, who it was for, and why it was a priority.</p>
+        <span class="tags tbd">To be filled in</span>
       </a>
       <a class="row" data-c="butter" href="case-reviews.html">
         <div class="thumb">D</div>
@@ -413,10 +414,10 @@
           <span class="code">DOCTOLIB / 03</span>
           <h3>Reviews</h3>
         </div>
-        <span class="tags tbd">To be filled in</span>
         <span class="status" data-s="draft">Draft</span>
         <span class="arrow">→</span>
         <p class="row-desc tbd">Describe the initial problem here, who it was for, and why it was a priority.</p>
+        <span class="tags tbd">To be filled in</span>
       </a>
     </div>
   </div>
