@@ -153,6 +153,9 @@
     border-radius:999px;
     transition:background .2s, gap .2s;
   }
+  .hero-cta.ghost{background:transparent; color:var(--ink); border:1px solid var(--ink);}
+  .hero-cta.ghost:hover{background:var(--ink); color:var(--paper);}
+  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
   .hero-cta:hover{background:var(--poppy); gap:13px;}
 
   .section-pad{padding:96px 0;}
@@ -366,7 +369,7 @@
         <span>Meero → Doctolib</span>
         <span>Bout en bout</span>
       </div>
-      <a class="hero-cta" href="#travail">Voir le travail →</a>
+      <div class="hero-ctas"><a class="hero-cta" href="#travail">Voir le travail →</a><a class="hero-cta ghost" href="cv.html">En savoir plus sur moi →</a></div>
     </div>
   </div>
 </section>
