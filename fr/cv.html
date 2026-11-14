@@ -102,6 +102,7 @@
   /* Experience */
   .job{display:grid; grid-template-columns:118px 1fr; gap:16px; padding:24px 0; border-bottom:1px solid var(--line);}
   .job .y{font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color:var(--ink-soft); line-height:1.5; padding-top:4px;}
+  .job .y .dur{display:block; margin-top:2px; opacity:0.75;}
   .job h3{font-size:1.22rem; font-weight:600;}
   .job .co{font-size:0.9rem; color:var(--accent); font-weight:500; margin-top:4px;}
   .job .co em{font-style:normal; color:var(--ink-soft); font-weight:400;}
@@ -187,7 +188,7 @@
         <h2>Expériences</h2>
 
         <article class="job current">
-          <div class="y">Janv. 2023 — aujourd’hui</div>
+          <div class="y">Janv. 2023 — aujourd’hui<span class="dur" data-start="2023-01">3 ans 11 mois</span></div>
           <div>
             <h3>Senior Product Designer</h3>
             <div class="co">Doctolib <em>· Paris</em></div>
@@ -196,7 +197,7 @@
         </article>
 
         <article class="job">
-          <div class="y">Mai 2020 — Déc. 2022</div>
+          <div class="y">Mai 2020 — Déc. 2022<span class="dur">2 ans 8 mois</span></div>
           <div>
             <h3>Product Designer</h3>
             <div class="co">Doctolib <em>· Paris</em></div>
@@ -204,7 +205,7 @@
         </article>
 
         <article class="job">
-          <div class="y"><span class="tbd">Avr. 2018 — 20XX</span></div>
+          <div class="y">Avr. 2018 — Avr. 2020<span class="dur">2 ans 1 mois</span></div>
           <div>
             <h3>Product Designer</h3>
             <div class="co">Meero <em>· Paris · CDI</em></div>
@@ -213,7 +214,7 @@
         </article>
 
         <article class="job">
-          <div class="y">Déc. 2015 — Sept. 2017</div>
+          <div class="y">Déc. 2015 — Sept. 2017<span class="dur">1 an 10 mois</span></div>
           <div>
             <h3>Graphiste</h3>
             <div class="co">Max Havelaar France <em>· Alternance</em></div>
@@ -222,7 +223,7 @@
         </article>
 
         <article class="job">
-          <div class="y">Nov. 2014 — Sept. 2015</div>
+          <div class="y">Nov. 2014 — Sept. 2015<span class="dur">11 mois</span></div>
           <div>
             <h3>Assistante multimédia</h3>
             <div class="co">Cité de la Céramique, Sèvres <em>· Alternance</em></div>
@@ -231,7 +232,7 @@
         </article>
 
         <article class="job">
-          <div class="y">Juin 2013</div>
+          <div class="y">Juin 2013<span class="dur">1 mois</span></div>
           <div>
             <h3>Webdesigner</h3>
             <div class="co">Agence Adjectif, Rhône <em>· Stage</em></div>
@@ -240,7 +241,7 @@
         </article>
 
         <article class="job">
-          <div class="y">Fév. — Mars 2010</div>
+          <div class="y">Fév. — Mars 2010<span class="dur">2 mois</span></div>
           <div>
             <h3>Graphiste</h3>
             <div class="co">Félix Création, Haute-Savoie <em>· Stage</em></div>
@@ -300,5 +301,10 @@
   <button class="btn" onclick="window.print()">↓ Télécharger en PDF</button>
 </section>
 
+<script>
+(function(){var el=document.querySelector('.dur[data-start]'); if(!el) return;
+var p=el.dataset.start.split('-'), d=new Date(), m=(d.getFullYear()-+p[0])*12+(d.getMonth()+1-+p[1])+1, y=Math.floor(m/12), r=m%12, out=[];
+if(y) out.push(y+(y>1?' ans':' an')); if(r) out.push(r+(r>1?' mois':' mois')); el.textContent=out.join(' ');})();
+</script>
 </body>
 </html>
