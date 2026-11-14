@@ -176,14 +176,18 @@
     gap:22px 56px;
     padding:24px 20px;
     margin:0 -20px;
-    border-top:3px solid transparent;
+    position:relative;
     border-bottom:1px solid var(--line);
     transition:border-color .25s ease, background .25s ease;
   }
   .work-list .row:first-child{border-top:1px solid var(--line);}
-  .row[data-c="poppy"]:hover{border-top-color:var(--poppy); background:rgba(255,75,62,0.05);}
-  .row[data-c="cobalt"]:hover{border-top-color:var(--cobalt); background:rgba(42,62,255,0.05);}
-  .row[data-c="butter"]:hover{border-top-color:var(--butter); background:rgba(255,201,60,0.08);}
+  .row::before{content:""; position:absolute; left:0; right:0; top:-1px; height:4px; background:transparent; transition:background .25s ease;}
+  .row[data-c="poppy"]:hover::before{background:var(--poppy);}
+  .row[data-c="cobalt"]:hover::before{background:var(--cobalt);}
+  .row[data-c="butter"]:hover::before{background:var(--butter);}
+  .row[data-c="poppy"]:hover{background:rgba(255,75,62,0.05);}
+  .row[data-c="cobalt"]:hover{background:rgba(42,62,255,0.05);}
+  .row[data-c="butter"]:hover{background:rgba(255,201,60,0.08);}
   .thumb{
     width:64px; height:64px; flex:none;
     border-radius:12px;
