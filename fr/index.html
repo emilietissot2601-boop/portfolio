@@ -269,6 +269,10 @@
     border:1.5px solid var(--ink);
     transition:transform .2s ease;
   }
+  .tk-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:36px;}
+  .tk-grid .chip-grid{margin-top:16px;}
+  .tk-title{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);}
+  @media (max-width:820px){ .tk-grid{grid-template-columns:1fr; gap:28px;} }
   .chip:hover{transform:translateY(-2px);}
   .chip:nth-child(odd){border-color:var(--poppy); color:var(--poppy);}
   .chip:nth-child(even){border-color:var(--cobalt); color:var(--cobalt);}
@@ -368,49 +372,16 @@
     <div class="section-head reveal">
       <div>
         <p class="eyebrow">Sélection</p>
-        <h2>Neuf projets, un fil conducteur</h2>
+        <h2>Six projets, un fil conducteur</h2>
       </div>
       <p>Descriptions et résultats sont encore des ébauches à remplacer.</p>
     </div>
 
     <div class="work-list reveal">
-      <a class="row" data-c="poppy" href="case-plateforme-client.html">
-        <div class="thumb">M</div>
-        <div class="row-main">
-          <span class="code">MEERO / 01</span>
-          <h3>Plateforme client</h3>
-        </div>
-        <span class="tags tbd">Recherche · UX · UI · Design system</span>
-        <span class="status" data-s="live">En ligne</span>
-        <span class="arrow">→</span>
-        <p class="row-desc tbd">Refonte de la plateforme de commande utilisée par les clients Meero pour réserver et suivre leurs prestations photo.</p>
-      </a>
-      <a class="row" data-c="cobalt" href="case-tunnel-achat.html">
-        <div class="thumb">M</div>
-        <div class="row-main">
-          <span class="code">MEERO / 02</span>
-          <h3>Tunnel d'achat</h3>
-        </div>
-        <span class="tags tbd">UX research · Wireframes · Tests</span>
-        <span class="status" data-s="live">En ligne</span>
-        <span class="arrow">→</span>
-        <p class="row-desc tbd">Optimisation du parcours d'achat pour réduire l'abandon en cours de commande.</p>
-      </a>
-      <a class="row" data-c="butter" href="case-doctolib.html">
-        <div class="thumb">D</div>
-        <div class="row-main">
-          <span class="code">DOCTOLIB / 03</span>
-          <h3 class="tbd">Nom du projet</h3>
-        </div>
-        <span class="tags tbd">À compléter</span>
-        <span class="status" data-s="draft">Brouillon</span>
-        <span class="arrow">→</span>
-        <p class="row-desc tbd">Décris ici un projet mené chez Doctolib : quel produit, quel problème patient/praticien, ton rôle exact.</p>
-      </a>
       <a class="row" data-c="poppy" href="case-profile-italy.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 04</span>
+          <span class="code">DOCTOLIB / 01</span>
           <h3>Profile improvements in Italy</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -421,7 +392,7 @@
       <a class="row" data-c="cobalt" href="case-autocomplete.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 05</span>
+          <span class="code">DOCTOLIB / 02</span>
           <h3>Autocomplete</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -432,7 +403,7 @@
       <a class="row" data-c="butter" href="case-map-experience.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 06</span>
+          <span class="code">DOCTOLIB / 03</span>
           <h3>Map experience</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -443,7 +414,7 @@
       <a class="row" data-c="poppy" href="case-filters.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 07</span>
+          <span class="code">DOCTOLIB / 04</span>
           <h3>Filters</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -454,7 +425,7 @@
       <a class="row" data-c="cobalt" href="case-pre-qualification.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 08</span>
+          <span class="code">DOCTOLIB / 05</span>
           <h3>Pre-qualification</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -465,7 +436,7 @@
       <a class="row" data-c="butter" href="case-search-results.html">
         <div class="thumb">D</div>
         <div class="row-main">
-          <span class="code">DOCTOLIB / 09</span>
+          <span class="code">DOCTOLIB / 06</span>
           <h3>Search results page redesign</h3>
         </div>
         <span class="tags tbd">À compléter</span>
@@ -503,19 +474,37 @@
         <h2>Ce que je sais faire, du brief au ship.</h2>
       </div>
     </div>
-    <div class="chip-grid reveal">
-      <span class="chip">Recherche utilisateur</span>
-      <span class="chip">Architecture de l'information</span>
-      <span class="chip">Wireframing</span>
-      <span class="chip">UI Design</span>
-      <span class="chip">Design system</span>
-      <span class="chip">Prototypage (Figma)</span>
-      <span class="chip">Tests utilisateurs</span>
-      <span class="chip">Workflows AI-augmentés</span>
-      <span class="chip">Facilitation d'ateliers</span>
-      <span class="chip">Accessibilité</span>
-      <span class="chip">Product strategy</span>
-      <span class="chip">Design ops</span>
+    <div class="tk-grid reveal">
+      <div class="tk-group">
+        <p class="tk-title">Outils</p>
+        <div class="chip-grid">
+          <span class="chip">Figma</span>
+          <span class="chip">Claude</span>
+          <span class="chip">Claude Design</span>
+          <span class="chip">Maze</span>
+          <span class="chip">Screeb</span>
+        </div>
+      </div>
+      <div class="tk-group">
+        <p class="tk-title">Compétences</p>
+        <div class="chip-grid">
+          <span class="chip">Recherche utilisateur</span>
+          <span class="chip">Design system</span>
+          <span class="chip">Analyse de données</span>
+          <span class="chip">Data driven</span>
+          <span class="chip">Blueprint</span>
+          <span class="chip">Double diamant</span>
+          <span class="chip">Mobile first</span>
+        </div>
+      </div>
+      <div class="tk-group">
+        <p class="tk-title">Savoir-être</p>
+        <div class="chip-grid">
+          <span class="chip">Empathique</span>
+          <span class="chip">Polyvalente</span>
+          <span class="chip">Joviale</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
