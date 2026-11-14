@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Emilie Tissot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF7EF; --ink:#16152B; --ink-soft:#6B6980;
+    --line: rgba(22,21,43,0.12);
+    --poppy:#FF4B3E; --cobalt:#2A3EFF; --butter:#FFC93C;
+    --accent: var(--cobalt);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter', sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0; line-height:1.1;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;
+  }
+  .tbd{position:relative; border-bottom:1.5px dashed var(--ink-soft);}
+  .tbd::after{
+    content:"draft — to be replaced"; position:absolute; left:0; top:100%;
+    font-family:'IBM Plex Mono', monospace; font-size:0.58rem; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--ink-soft); white-space:nowrap; padding-top:3px; font-weight:400;
+  }
+
+  header.nav{
+    position:sticky; top:0; z-index:50; background:rgba(251,247,239,0.9);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:20px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .back{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem;
+    display:inline-flex; align-items:center; gap:8px; opacity:0.7; transition:opacity .2s, gap .2s;
+  }
+  .back:hover{opacity:1; gap:12px;}
+  .wordmark{font-family:'Fraunces', serif; font-weight:700; font-size:1.05rem;}
+  .lang{display:inline-flex; align-items:center; gap:2px; font-family:'IBM Plex Mono', monospace; font-size:0.72rem; border:1px solid var(--line); border-radius:999px; padding:3px;}
+  .lang a, .lang span{padding:5px 10px; border-radius:999px; line-height:1; text-decoration:none;}
+  .lang span{background:var(--ink); color:var(--paper); font-weight:600;}
+  .lang a{opacity:0.65; color:inherit;}
+  .lang a:hover{opacity:1;}
+
+  /* Hero */
+  .hero{padding:72px 0 44px; border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(circle at 92% -10%, rgba(42,62,255,0.14), transparent 50%),
+      radial-gradient(circle at 70% 120%, rgba(255,201,60,0.18), transparent 45%),
+      var(--paper);
+  }
+  .hero-top{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
+  .hero h1{font-size:clamp(2.6rem, 7vw, 4.6rem); font-weight:900; letter-spacing:-0.01em;}
+  .hero .role{font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:clamp(1.2rem,2.4vw,1.6rem); color:var(--accent); margin-top:8px;}
+  .hero .lead{max-width:620px; margin-top:22px; color:var(--ink-soft); font-size:1.05rem;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace; font-size:0.8rem; text-decoration:none; cursor:pointer;
+    border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:12px 20px; border-radius:999px;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:hover{background:var(--accent); border-color:var(--accent);}
+  .contact{display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:32px; padding-top:24px; border-top:1px solid var(--line);}
+  .contact .k{font-family:'IBM Plex Mono', monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); display:block;}
+  .contact .v{font-weight:500; font-size:0.95rem;}
+  .contact a.v{text-decoration:none; border-bottom:1px solid var(--line);}
+  .contact a.v:hover{border-color:var(--ink);}
+
+  /* Grid */
+  .grid{display:grid; grid-template-columns:7fr 5fr; gap:64px; padding:56px 0 24px;}
+  .col > section + section{margin-top:56px;}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem); font-weight:700; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:8px;}
+
+  /* Skills */
+  .skill{padding:22px 0; border-bottom:1px solid var(--line);}
+  .skill-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px;}
+  .skill h3{font-size:1.2rem; font-weight:600;}
+  .level{display:inline-flex; gap:5px; flex-shrink:0;}
+  .level i{width:10px; height:10px; border-radius:50%; border:1.5px solid var(--accent);}
+  .level i.on{background:var(--accent);}
+  .skill p{color:var(--ink-soft); font-size:0.94rem; margin:8px 0 12px;}
+  .tools{display:flex; flex-wrap:wrap; gap:6px;}
+  .tools span{font-family:'IBM Plex Mono', monospace; font-size:0.7rem; padding:4px 10px; border-radius:999px; border:1px solid var(--line); color:var(--ink);}
+
+  /* Education */
+  .edu{display:grid; grid-template-columns:96px 1fr; gap:4px 16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .edu .y{font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--ink-soft); padding-top:2px;}
+  .edu .t{font-weight:500; font-size:0.96rem; line-height:1.45;}
+  .edu .s{grid-column:2; font-size:0.86rem; color:var(--accent);}
+
+  /* Experience */
+  .job{display:grid; grid-template-columns:118px 1fr; gap:16px; padding:24px 0; border-bottom:1px solid var(--line);}
+  .job .y{font-family:'IBM Plex Mono', monospace; font-size:0.76rem; color:var(--ink-soft); line-height:1.5; padding-top:4px;}
+  .job h3{font-size:1.22rem; font-weight:600;}
+  .job .co{font-size:0.9rem; color:var(--accent); font-weight:500; margin-top:4px;}
+  .job .co em{font-style:normal; color:var(--ink-soft); font-weight:400;}
+  .job p{color:var(--ink-soft); font-size:0.94rem; margin:10px 0 0;}
+  .job.current h3::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--poppy); margin-right:10px; vertical-align:middle; position:relative; top:-2px;}
+
+  /* Misc */
+  .misc{list-style:none; padding:0; margin:16px 0 0;}
+  .misc li{display:grid; grid-template-columns:28px 1fr; gap:10px; padding:10px 0; color:var(--ink-soft); font-size:0.95rem;}
+  .misc .ic{font-size:1.05rem; line-height:1.5;}
+
+  .cta-row{padding:48px 0 64px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+
+  @media (max-width:820px){
+    .grid{grid-template-columns:1fr; gap:56px;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px;} .nav-inner{padding:16px 20px;}
+    .job{grid-template-columns:1fr; gap:4px;}
+    .edu{grid-template-columns:84px 1fr;}
+    .hero{padding:52px 0 36px;}
+  }
+
+  /* Print / PDF */
+  @media print{
+    @page{size:A4; margin:10mm 12mm;}
+    body{background:#fff; font-size:11px; line-height:1.45;}
+    header.nav, .cta-row, .no-print{display:none !important;}
+    .hero{padding:0 0 14px; background:none;}
+    .hero h1{font-size:34px;} .hero .role{font-size:16px;} .hero .lead{font-size:11.5px; margin-top:10px; max-width:none;}
+    .contact{margin-top:14px; padding-top:10px;}
+    .wrap{max-width:none; padding:0;}
+    .grid{grid-template-columns:7fr 5fr; gap:28px; padding:18px 0 0;}
+    .col > section + section{margin-top:22px;}
+    h2{font-size:18px; padding-bottom:6px;}
+    .skill{padding:9px 0;} .skill h3{font-size:13px;} .skill p{font-size:10.5px; margin:4px 0 6px;}
+    .tools span{font-size:8.5px; padding:2px 7px;}
+    .edu{padding:7px 0; grid-template-columns:72px 1fr;} .edu .t{font-size:10.5px;} .edu .s{font-size:10px;}
+    .job{padding:9px 0; grid-template-columns:86px 1fr; gap:10px;} .job h3{font-size:13px;} .job p{font-size:10.5px; margin-top:4px;} .job .co{font-size:10.5px;}
+    .misc li{padding:4px 0; font-size:10.5px;}
+    .tbd{border-bottom:none;} .tbd::after{display:none;}
+    .job .y, .edu .y{font-size:8.5px; white-space:nowrap;} .edu{grid-template-columns:62px 1fr;} .edu .s{grid-column:2;}
+    .job{grid-template-columns:80px 1fr;} .job .y{white-space:normal;} .hero h1{font-size:30px;}
+    .skill p{margin:3px 0 5px;} .col > section + section{margin-top:16px;} .grid{padding-top:12px;}
+    .job, .skill, .edu{break-inside:avoid;}
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%2316152B'%3E%3Crect x='10' y='10' width='80' height='14'/%3E%3Crect x='10' y='10' width='14' height='80'/%3E%3Crect x='10' y='44' width='48' height='14'/%3E%3Crect x='10' y='76' width='48' height='14'/%3E%3Crect x='63' y='10' width='14' height='80'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="back" href="index.html">← Back to portfolio</a>
+    <div style="display:flex; align-items:center; gap:20px;"><span class="wordmark">Emilie Tissot</span><div class="lang"><span>EN</span><a href="fr/cv.html" hreflang="fr" lang="fr">FR</a></div></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom:14px;">Curriculum vitae</p>
+    <div class="hero-top">
+      <div>
+        <h1>Emilie Tissot</h1>
+        <p class="role">Senior Product Designer · Paris</p>
+      </div>
+      <button class="btn no-print" onclick="window.print()">↓ Download as PDF</button>
+    </div>
+    <p class="lead">9 years of experience, now at Doctolib after Meero. An end-to-end, versatile practice, from product to brand, augmented by AI. I’m drawn to meaningful missions.</p>
+    <div class="contact">
+      <div><span class="k">Email</span><a class="v" href="mailto:emilie.tissot2601@gmail.com">emilie.tissot2601@gmail.com</a></div>
+      <div><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener">linkedin.com/in/etissot</a></div>
+      <div><span class="k">Behance</span><a class="v" href="https://www.behance.net/emilietissot" target="_blank" rel="noopener">behance.net/emilietissot</a></div>
+      <div><span class="k">Dribbble</span><a class="v" href="https://dribbble.com/EmilieTiss" target="_blank" rel="noopener">dribbble.com/EmilieTiss</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="grid">
+
+    <div class="col">
+      <section>
+        <h2>Experience</h2>
+
+        <article class="job current">
+          <div class="y tbd">20XX — present</div>
+          <div>
+            <h3>Senior Product Designer</h3>
+            <div class="co">Doctolib <em>· Paris</em></div>
+            <p class="tbd">Patient search, filters, Doctolib Parents, Italian market (profiles and reviews), rebranding.</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="y"><span class="tbd">Apr. 2018 — 20XX</span></div>
+          <div>
+            <h3>Product Designer</h3>
+            <div class="co">Meero <em>· Paris · Full-time</em></div>
+            <p>Agile squad work on the client platform: wireframes, high-fidelity mockups and prototypes, contributions to the design system, and many visual assets (landing pages, banners, illustrations, pictograms, icons…).</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="y">Dec. 2015 — Sept. 2017</div>
+          <div>
+            <h3>Graphic Designer</h3>
+            <div class="co">Max Havelaar France <em>· Work-study</em></div>
+            <p>Print and digital communication assets: banners, leaflets, flyers…</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="y">Nov. 2014 — Sept. 2015</div>
+          <div>
+            <h3>Multimedia Assistant</h3>
+            <div class="co">Cité de la Céramique, Sèvres <em>· Work-study</em></div>
+            <p>Multimedia content and installations for exhibitions, community management.</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="y">June 2013</div>
+          <div>
+            <h3>Web Designer</h3>
+            <div class="co">Agence Adjectif, Rhône <em>· Internship</em></div>
+            <p>Logos, print ads and wireframes for a real estate developer’s app.</p>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="y">Feb. — Mar. 2010</div>
+          <div>
+            <h3>Graphic Designer</h3>
+            <div class="co">Félix Création, Haute-Savoie <em>· Internship</em></div>
+            <p>Logos, flyers, photo montages and brochure layout.</p>
+          </div>
+        </article>
+      </section>
+
+      <section>
+        <h2>Beyond work</h2>
+        <ul class="misc">
+          <li><span class="ic" aria-hidden="true">♥</span><span>Into zero waste and more responsible consumption: I make my own cosmetics. And I love horse riding: 15 years of practice, some instructing, and the French Galop 5 level.</span></li>
+          <li><span class="ic" aria-hidden="true">✕</span><span>Rudeness, spiders and Comic Sans MS.</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="col">
+      <section>
+        <h2>Skills</h2>
+
+        <div class="skill">
+          <div class="skill-head"><h3>Product Design</h3><span class="level" title="Expert" aria-label="Level: expert"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          <p>From product constraints to QA: zoning, wireframing, mockups and prototyping, following UX principles and development constraints (HTML, CSS…).</p>
+          <div class="tools tbd"><span>Figma</span><span>Sketch</span><span>XD</span><span>InVision</span><span>Principle</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><h3>Brand Design</h3><span class="level" title="Expert" aria-label="Level: expert"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          <p>From brief to finished product: creative concepts, art direction, print, web and video production.</p>
+          <div class="tools"><span>InDesign</span><span>Illustrator</span><span>Photoshop</span><span>After Effects</span></div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-head"><h3>Marketing Design</h3><span class="level" title="Basics" aria-label="Level: basics"><i class="on"></i><i></i><i></i></span></div>
+          <p>Email campaigns, CMS, blog writing and community management.</p>
+          <div class="tools"><span>Mailchimp</span><span>Unbounce</span><span>WordPress</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu"><div class="y">2015 — 2017</div><div class="t">Master’s in Entrepreneurial Management of Digital Projects</div><div class="s">Fonderie de l’Image, Bagnolet</div></div>
+        <div class="edu"><div class="y">2014 — 2015</div><div class="t">Bachelor’s in Web Marketing Project Management &amp; Website Design</div><div class="s">Fonderie de l’Image, Bagnolet</div></div>
+        <div class="edu"><div class="y">2012 — 2014</div><div class="t">Two-year degree (BTS) in Graphic Design, Communication &amp; Digital Media</div><div class="s">École Bellecour, Lyon</div></div>
+        <div class="edu"><div class="y">2011 — 2012</div><div class="t">Art foundation year</div><div class="s">ESAD Valence</div></div>
+        <div class="edu"><div class="y">2010 — 2011</div><div class="t">Art school preparatory course</div><div class="s">Atelier de Sèvres, Paris</div></div>
+        <div class="edu"><div class="y">2008 — 2010</div><div class="t">Vocational baccalaureate in Graphic Communication</div><div class="s">Lycée La Fontaine, Haute-Savoie</div></div>
+      </section>
+    </div>
+
+  </div>
+</div>
+
+<section class="wrap cta-row">
+  <a class="back" href="index.html">← Back to portfolio</a>
+  <button class="btn" onclick="window.print()">↓ Download as PDF</button>
+</section>
+
+</body>
+</html>

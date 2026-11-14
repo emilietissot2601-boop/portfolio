@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Filters — Doctolib — Emilie Tissot</title>
+<title>Filtres — Doctolib — Emilie Tissot</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,9 +21,13 @@
     font-family:'Inter', sans-serif; font-size:16px; line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
   a{color:inherit;}
+  img{max-width:100%; display:block;}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .wide{max-width:1120px; margin:0 auto; padding:0 32px 56px;}
+  .body-section.intro{border-bottom:none; padding-bottom:0;}
+  @media (max-width:640px){ .wrap,.wide{padding-left:20px; padding-right:20px;} .nav-inner{padding:16px 20px;} }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
     letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;
@@ -59,8 +63,8 @@
     letter-spacing:0.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
     color:#fff; background:var(--accent); margin-bottom:20px;
   }
-  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:680px;}
-  .hero .lead{max-width:560px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
+  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:720px;}
+  .hero .lead{max-width:600px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
 
   .meta-strip{
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
@@ -73,16 +77,89 @@
   .meta-strip .v{font-size:0.98rem; font-weight:500;}
   @media (max-width:640px){ .meta-strip{grid-template-columns:1fr; gap:18px;} }
 
-  .body-section{padding:48px 0; border-bottom:1px solid var(--line);}
+  /* Key figures */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:40px 0; border-bottom:1px solid var(--line);}
+  .stat{padding:0 20px; border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .n{font-family:'Fraunces', serif; font-weight:700; font-size:clamp(2rem,4vw,2.8rem); line-height:1; color:var(--accent);}
+  .stat .l{font-size:0.86rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+  @media (max-width:760px){
+    .stats{grid-template-columns:1fr 1fr; gap:28px 0;}
+    .stat:nth-child(3){border-left:none; padding-left:0;}
+  }
+
+  /* Acts */
+  .act{padding-top:72px; padding-bottom:8px;}
+  .act .num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .act h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; margin-top:10px; max-width:700px;}
+  .act p{color:var(--ink-soft); max-width:640px; margin-top:14px;}
+
+  .body-section{padding-top:48px; padding-bottom:48px; border-bottom:1px solid var(--line);}
   .body-section h2{font-size:clamp(1.5rem, 3vw, 2rem); font-weight:600; margin-bottom:16px;}
+  .body-section h3{font-size:1.2rem; font-weight:600; margin:32px 0 10px;}
   .body-section p{color:var(--ink-soft); max-width:680px;}
+  .body-section p + p{margin-top:12px;}
+  .body-section ul{color:var(--ink-soft); max-width:680px; padding-left:20px;}
+  .body-section strong{color:var(--ink); font-weight:600;}
+
+  /* Cards */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;}
+  .card{border:1px solid var(--line); border-radius:16px; padding:22px; background:rgba(255,255,255,0.5);}
+  .card .k{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .card h3{font-size:1.12rem; margin:10px 0 8px; font-weight:600;}
+  .card p{font-size:0.92rem; line-height:1.6; margin:0;}
+  .card .so{margin-top:12px; padding-top:12px; border-top:1px solid var(--line); font-size:0.88rem; color:var(--ink);}
+  @media (max-width:760px){ .cards{grid-template-columns:1fr;} }
+
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px;}
+  .split .card ul{margin:8px 0 0; padding-left:18px; font-size:0.92rem; color:var(--ink-soft);}
+  .split .card li + li{margin-top:6px;}
+  @media (max-width:640px){ .split{grid-template-columns:1fr;} }
+
+  blockquote{margin:28px 0 0; padding:0 0 0 20px; border-left:3px solid var(--accent); max-width:640px;}
+  blockquote p{font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:1.25rem; line-height:1.4; color:var(--ink) !important;}
+  blockquote cite{display:block; margin-top:8px; font-style:normal; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);}
+
+  table{width:100%; border-collapse:collapse; margin-top:24px; font-size:0.92rem;}
+  th, td{text-align:left; padding:12px 10px; border-bottom:1px solid var(--line);}
+  th{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  td.up{font-weight:600; color:var(--accent);}
+  .table-wrap{overflow-x:auto; max-width:680px;}
+
+  /* Figures */
+  figure{margin:32px 0 0;}
+  figure .frame{background:#EEF4FC; border-radius:18px; padding:28px; display:flex; justify-content:center; align-items:flex-start; gap:28px; flex-wrap:wrap;}
+  figure .frame a{display:block;}
+  figure .frame img{border-radius:10px; box-shadow:0 1px 2px rgba(22,21,43,0.06), 0 8px 24px rgba(22,21,43,0.08); background:#fff;}
+  figure .frame.plain{padding:0; background:none;}
+  figure .frame.plain img{box-shadow:none; border:1px solid var(--line);}
+  .phone{width:260px;}
+  .phone-sm{width:220px;}
+  figcaption{font-size:0.84rem; color:var(--ink-soft); margin-top:12px; max-width:680px;}
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px;}
+  .pair figure{margin:0;}
+  .pair .frame{height:100%;}
+  .label{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:14px; width:100%; text-align:center;}
+  .label.before{color:var(--ink-soft);}
+  .label.after{color:var(--cobalt);}
+  @media (max-width:640px){ .pair{grid-template-columns:1fr;} .phone{width:220px;} figure .frame{padding:18px;} }
+
+  .placeholder{border:1.5px dashed var(--ink-soft); border-radius:18px; padding:48px 24px; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); margin-top:28px;}
+
+  .pill{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.64rem; letter-spacing:0.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--ink-soft); margin-left:6px; vertical-align:middle;}
+  .pill.wip{background:var(--butter); border-color:var(--butter); color:var(--ink);}
+
+  .bridge{margin:56px 0 0; padding:32px; border-radius:18px; background:var(--ink); color:var(--paper);}
+  .bridge .eyebrow{color:rgba(251,247,239,0.6);}
+  .bridge p{color:rgba(251,247,239,0.85) !important; max-width:680px; margin-top:12px;}
+  .bridge ul{margin:14px 0 0; padding-left:20px; color:rgba(251,247,239,0.85); max-width:680px;}
 
   .cta-row{
-    padding:56px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    padding-top:56px; padding-bottom:56px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
   }
   .btn-outline{
     font-family:'IBM Plex Mono', monospace; font-size:0.82rem;
-    border:1px solid var(--line); padding:13px 22px; border-radius:999px;
+    border:1px solid var(--line); padding:13px 22px; border-radius:999px; text-decoration:none;
   }
 
   .nav-right{display:flex; align-items:center; gap:14px;}
@@ -106,38 +183,234 @@
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow" style="margin-bottom:14px;">Doctolib — Healthtech</p>
-    <span class="tag">07 — Filters</span>
-    <h1>Filters</h1>
-    <p class="lead tbd">[Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.]</p>
+    <span class="tag">07 — Filtres</span>
+    <h1>Filtres : d’un bouton caché à un système de recherche</h1>
+    <p class="lead">Les patients réclamaient de meilleurs filtres, mais à peine une recherche sur dix les utilisait. J’ai rendu les filtres visibles dans les résultats de recherche, validé ce changement par la data, des tests utilisateurs et un A/B test, puis conçu l’évolution de tout le système de filtres.</p>
   </div>
 </section>
 
 <section class="wrap">
   <div class="meta-strip">
-    <div><div class="k">Rôle</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Outils</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Résultat</div><div class="v tbd">À compléter</div></div>
+    <div><div class="k">Rôle</div><div class="v tbd">Product Designer · UX research</div></div>
+    <div><div class="k">Périmètre</div><div class="v">Recherche patient · App &amp; web mobile · France, Allemagne, Italie</div></div>
+    <div><div class="k">Période</div><div class="v tbd">2022 – 2026</div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">+55%</div><div class="l">d’usage des filtres en France (A/B test)</div></div>
+    <div class="stat"><div class="n">+44%</div><div class="l">d’usage des filtres en Allemagne (A/B test)</div></div>
+    <div class="stat"><div class="n">4,2/5</div><div class="l">note moyenne en tests utilisateurs modérés</div></div>
+    <div class="stat"><div class="n">90%</div><div class="l">des recherches ont au moins un filtre disponible</div></div>
+  </div>
+</section>
+
+<!-- ============ ACT 1 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 1 · 2022</div>
+  <h2>Rendre les filtres visibles</h2>
+</section>
+
+<section class="wrap body-section">
+  <h2>Le problème</h2>
+  <p>Sur Doctolib, les patients cherchent par spécialité et par ville, puis choisissent un praticien dans une longue liste. Les filtres (disponibilités, honoraires, motif de consultation, langue…) faisaient partie des améliorations les plus demandées par les patients. Ils existaient, mais derrière un unique bouton flottant « Filtrer » en bas des résultats.</p>
+  <p>Seules <strong>10 % des recherches mobiles en France</strong> et <strong>14 % en Allemagne</strong> utilisaient un filtre quand il y en avait un. Avant de redessiner quoi que ce soit, l’équipe devait savoir quels filtres comptaient, pour qui, et si de meilleurs filtres aideraient vraiment les patients à réserver.</p>
+  <div class="placeholder">Écran à ajouter : résultats de recherche avant (bouton flottant « Filtrer ») vs V2 (barre de filtres en chips)</div>
+</section>
+
+<section class="wrap body-section">
+  <h2>Ce que disait la data</h2>
+  <p>Avec l’équipe data, nous avons analysé une semaine de recherches mobiles en France et en Allemagne. Trois enseignements ont guidé le design.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="k">Insight 01</div>
+      <h3>L’usage dépend de la spécialité</h3>
+      <p>Généralistes (18 %), pédiatres (16 %) et ORL (12 %) arrivent en tête, surtout via le filtre de disponibilité : ce sont des besoins urgents. Pour les psychiatres, ce sont les honoraires et le motif.</p>
+      <div class="so">→ « Disponibilités » passe en premier dans la barre.</div>
+    </div>
+    <div class="card">
+      <div class="k">Insight 02</div>
+      <h3>Plus de résultats, plus de filtres</h3>
+      <p>L’usage passe de 3,6 % à 15 % à mesure que le nombre de résultats augmente. Avec 77 résultats médians en France contre 18 en Italie, l’impact serait plus fort sur les marchés matures.</p>
+      <div class="so">→ Mesurer d’abord en France et en Allemagne.</div>
+    </div>
+    <div class="card">
+      <div class="k">Insight 03</div>
+      <h3>Filtrer va de pair avec réserver</h3>
+      <p>Les patients qui filtrent réservent plus souvent. C’est une corrélation, pas une preuve, mais c’était suffisant pour prioriser les filtres dans la roadmap.</p>
+      <div class="so">→ Un A/B test pour vérifier la causalité.</div>
+    </div>
   </div>
 </section>
 
 <section class="wrap body-section">
-  <h2>Contexte</h2>
-  <p class="tbd">[Décris ici le contexte du projet : quelle équipe, quel produit, quel enjeu business ou utilisateur.]</p>
+  <h2>Tester avec des patients</h2>
+  <p>J’ai mené des tests utilisateurs modérés sur l’app mobile avec quatre patients, dont deux avec une déficience visuelle. Deux missions : modifier un filtre visible, puis en trouver un caché (un dentiste hispanophone).</p>
+  <div class="split">
+    <div class="card">
+      <div class="k">Ce qui a marché</div>
+      <ul>
+        <li>3 sur 4 ont trouvé la barre de filtres tout de suite et l’ont fait défiler naturellement.</li>
+        <li>Modifier un filtre a été facile pour tout le monde.</li>
+        <li>L’interface a été jugée « très lisible et aérée », même sans lunettes.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="k">Ce qu’on a corrigé</div>
+      <ul>
+        <li>« Plus de filtres » n’était pas clair : 3 participants ont raté les filtres plus bas dans la liste.</li>
+        <li>« Réinitialiser » a dérouté 3 participants sur 4, qui voulaient retaper pour désélectionner.</li>
+        <li>L’écran sans résultat frustrait tout le monde : il fallait une porte de sortie.</li>
+      </ul>
+    </div>
+  </div>
+  <blockquote>
+    <p>« L’expérience est très intuitive, surtout la deuxième fois : c’est rapide et efficace. »</p>
+    <cite>Participant au test</cite>
+  </blockquote>
+  <blockquote>
+    <p>« Ça me rappelle les applis de livraison de repas comme Uber Eats. »</p>
+    <cite>Participant au test</cite>
+  </blockquote>
 </section>
 
 <section class="wrap body-section">
-  <h2>Approche</h2>
-  <p class="tbd">[Décris ici ta méthode : recherche utilisateur, ateliers, wireframes, itérations, tests.]</p>
+  <h2>Résultats de l’A/B test</h2>
+  <p>La nouvelle barre de filtres a tourné deux semaines sur 100 % du trafic mobile en France et en Allemagne. L’usage des filtres a fortement et significativement augmenté, sur presque tous les types de filtres.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Filtre</th><th>France</th><th>Allemagne</th></tr></thead>
+      <tbody>
+        <tr><td>Tous filtres</td><td class="up">+55%</td><td class="up">+44%</td></tr>
+        <tr><td>Disponibilités</td><td class="up">+47%</td><td class="up">+54%</td></tr>
+        <tr><td>Motif de consultation</td><td class="up">+46%</td><td class="up">+7%</td></tr>
+        <tr><td>Langue</td><td class="up">+44%</td><td class="up">+25%</td></tr>
+        <tr><td>Assurance</td><td>—</td><td class="up">+44%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:24px;">La conversion est restée stable. Les patients filtraient plus sans réserver moins : la nouvelle version a donc été déployée. Elle donnait plus de contrôle aux patients sans rien coûter, et posait les bases de la suite.</p>
 </section>
 
+<!-- ============ ACT 2 ============ -->
+<section class="wrap">
+  <div class="bridge">
+    <div class="eyebrow">Et ensuite</div>
+    <p>La barre de filtres fonctionnait, et son succès a soulevé de nouvelles questions :</p>
+    <ul>
+      <li>Les PM voulaient des données plus fines sur l’usage des filtres.</li>
+      <li>Les retours sur le comportement et l’utilisabilité continuaient d’arriver, surtout sur desktop.</li>
+      <li>De nouveaux filtres arrivaient, et mobile et desktop devaient partager une même logique.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap act">
+  <div class="num">Partie 2 · Vision</div>
+  <h2>D’une feature à un système de filtres</h2>
+  <p>Le panneau était devenu un long formulaire mêlant boutons radio, cases à cocher et toggles. Chaque nouveau filtre l’aurait encore allongé. J’ai conçu une structure qui passe à l’échelle.</p>
+</section>
+
+<section class="wrap body-section intro">
+  <h2>Une liste, un niveau de profondeur</h2>
+  <p>Le nouveau panneau liste des <strong>catégories</strong> de filtres, regroupées par thème (disponibilités, prix &amp; assurance, autres). Chacune ouvre un sous-niveau avec le composant le plus adapté : un calendrier pour les dates, un champ de recherche pour les assurances, des cases à cocher pour les choix multiples. Le premier niveau affiche toujours la sélection en cours.</p>
+</section>
+<div class="wide">
+  <div class="pair">
+    <figure>
+      <div class="frame"><span class="label before">Avant</span><a href="../assets/filters/panel-current.jpg"><img class="phone" src="../assets/filters/panel-current.jpg" alt="Panneau de filtres actuel : un long formulaire avec boutons radio, cases à cocher, toggle et liens"></a></div>
+      <figcaption>Panneau actuel : chaque filtre affiché sous forme de formulaire.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><span class="label after">Vision</span><a href="../assets/filters/panel-vision.jpg"><img class="phone" src="../assets/filters/panel-vision.jpg" alt="Panneau de filtres vision : une liste de catégories groupées, chacune avec sa valeur"></a></div>
+      <figcaption>Vision : des catégories groupées, chacune avec sa valeur en cours.</figcaption>
+    </figure>
+  </div>
+  <figure>
+    <div class="frame"><a href="../assets/filters/availabilities-sub.jpg"><img src="../assets/filters/availabilities-sub.jpg" alt="Sous-niveaux de disponibilité : jour de départ, jour précis, liste des filtres, jour de la semaine, moment de la journée"></a></div>
+    <figcaption>Les disponibilités, découpées en sous-niveaux : à partir de, jour précis, jour de la semaine, moment de la journée.</figcaption>
+  </figure>
+</div>
+
+<section class="wrap body-section intro">
+  <h2>Zoom : concevoir le filtre par note</h2>
+  <p>Les notes arrivaient en Italie, il fallait donc pouvoir filtrer par note. J’ai commencé par un benchmark des autres apps : bouton radio, case à cocher ou chip, présélection par défaut, granularité, et filtre ou tri.</p>
+</section>
+<div class="wide">
+  <figure>
+    <div class="frame plain"><a href="../assets/filters/benchmark.jpg"><img src="../assets/filters/benchmark.jpg" alt="Benchmark des filtres par note : TripAdvisor, Airbnb, KAYAK, Booking.com et Hypelist"></a></div>
+    <figcaption>Benchmark : la plupart des apps traitent la note comme un tri, pas un filtre. TripAdvisor fait exception avec un filtre rapide « 5 étoiles ».</figcaption>
+  </figure>
+  <figure>
+    <div class="frame"><a href="../assets/filters/ratings-proposals.jpg"><img src="../assets/filters/ratings-proposals.jpg" alt="Quatre propositions de filtre par note : listes avec étoiles, chips"></a></div>
+    <figcaption>Quatre explorations, de la liste complète de 1 à 5 aux chips compactes.</figcaption>
+  </figure>
+  <div class="pair">
+    <figure>
+      <div class="frame"><a href="../assets/filters/ratings-final.jpg"><img src="../assets/filters/ratings-final.jpg" alt="Direction retenue : une note minimale (3, 4 ou 5 sur 5) affichée dans la liste des filtres"></a></div>
+      <figcaption>Direction retenue : une « note minimale » (3/5, 4/5, 5/5), visible dans la liste principale.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><a href="../assets/filters/ratings-srp.jpg"><img class="phone-sm" src="../assets/filters/ratings-srp.jpg" alt="Résultats de recherche italiens avec un filtre rapide Notes"></a></div>
+      <figcaption>Un filtre rapide « Notes » dans la barre de résultats (Italie).</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="wrap body-section intro">
+  <h2>Nouveaux filtres</h2>
+  <p>Le même modèle a permis d’ajouter facilement des filtres qui répondent à des besoins précis.</p>
+  <h3>Moyens de paiement <span class="pill wip">En développement</span></h3>
+  <p>Carte, espèces, chèque, et des options propres à chaque pays comme le virement et Satispay en Italie.</p>
+</section>
+<div class="wide">
+  <figure>
+    <div class="frame"><a href="../assets/filters/payment-flow.jpg"><img src="../assets/filters/payment-flow.jpg" alt="Parcours moyens de paiement en quatre écrans : résultats, panneau, sélection, résultats filtrés"></a></div>
+    <figcaption>De la barre de résultats à la liste filtrée en trois taps ; la chip affiche la sélection.</figcaption>
+  </figure>
+  <div class="pair">
+    <figure>
+      <div class="frame"><a href="../assets/filters/insurance.jpg"><img src="../assets/filters/insurance.jpg" alt="Filtre assurance : assurances suggérées, champ de recherche, liste des filtres"></a></div>
+      <figcaption><strong>Assurance</strong> : un champ de recherche et des suggestions d’abord, plutôt qu’une longue liste alphabétique.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><a href="../assets/filters/accessibility.jpg"><img class="phone-sm" src="../assets/filters/accessibility.jpg" alt="Filtre accessibilité : accès fauteuil roulant, ascenseur, signalétique braille, aide auditive…"></a></div>
+      <figcaption><strong>Accessibilité</strong> <span class="pill">Exploration</span> : dans la continuité des tests avec des patients malvoyants.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="wrap body-section intro">
+  <h2>Détails d’interaction sur desktop</h2>
+  <p>Le desktop représente environ 20 % du trafic et partage la même logique. Deux petits changements rendent les filtres sélectionnés plus clairs :</p>
+  <ul>
+    <li><strong>Une croix sur les chips sélectionnées</strong>, pour retirer un filtre en un clic (desktop uniquement : sur mobile, la zone de tap serait trop petite).</li>
+    <li><strong>Une icône pleine pour l’état sélectionné</strong>, pour ne pas reposer sur la couleur seule.</li>
+  </ul>
+</section>
+<div class="wide">
+  <div class="pair">
+    <figure>
+      <div class="frame"><a href="../assets/filters/desktop-close.jpg"><img src="../assets/filters/desktop-close.jpg" alt="Amélioration 1 : croix de fermeture sur une chip de filtre sélectionnée"></a></div>
+      <figcaption>Amélioration 1 : une croix quand un filtre est sélectionné.</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><a href="../assets/filters/desktop-icon.jpg"><img src="../assets/filters/desktop-icon.jpg" alt="Amélioration 2 : icône pleine pour l’état sélectionné"></a></div>
+      <figcaption>Amélioration 2 : une icône pleine pour l’état sélectionné.</figcaption>
+    </figure>
+  </div>
+</div>
+
 <section class="wrap body-section" style="border-bottom:none;">
-  <h2>Résultat</h2>
-  <p class="tbd">[Décris ici l'impact du projet : chiffres, retours utilisateurs, adoption.]</p>
+  <h2>Ce que j’en retiens</h2>
+  <ul class="tbd">
+    <li><strong>Un succès ne se mesure pas qu’en conversion.</strong> L’A/B test n’a pas fait bouger les réservations, mais a prouvé que les patients voulaient du contrôle. C’était suffisant pour déployer et investir davantage.</li>
+    <li><strong>La data dit où, les utilisateurs disent pourquoi.</strong> L’analyse a montré quels filtres comptaient ; les tests, où l’interface gênait.</li>
+    <li><strong>Concevoir le système avant la prochaine feature.</strong> Chaque nouveau filtre a été simple à ajouter parce que la structure était posée.</li>
+  </ul>
 </section>
 
 <section class="wrap cta-row">
   <a class="back" href="index.html">← Retour au portfolio</a>
-  <span class="btn-outline tbd">Étude de cas en cours de rédaction</span>
+  <a class="btn-outline tbd" href="index.html">Projet suivant →</a>
 </section>
 
 </body>
