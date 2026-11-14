@@ -171,9 +171,9 @@
   .work-list{margin-top:44px;}
   .row{
     display:grid;
-    grid-template-columns: 72px 1fr 100px 26px;
+    grid-template-columns: 72px 1fr 26px;
     align-items:center;
-    gap:22px;
+    gap:22px 40px;
     padding:24px 20px;
     margin:0 -20px;
     border-top:3px solid transparent;
@@ -208,7 +208,7 @@
   .row[data-c="butter"] .code{color:#B8860B;}
   .row h3{font-size:clamp(1.3rem, 2.2vw, 1.7rem); font-weight:600;}
   .row .tags{
-    grid-column:1 / -1; margin-left:94px; margin-top:-10px;
+    grid-column:1 / -1; margin-left:112px; margin-top:-10px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
     color:var(--ink-soft);
@@ -233,10 +233,10 @@
     grid-column:1 / -1;
     font-size:0.9rem; color:var(--ink-soft);
     max-width:640px; margin-top:-4px;
-    margin-left:94px;
+    margin-left:112px;
   }
   @media (max-width:760px){
-    .row{grid-template-columns:52px 1fr 90px 22px; gap:14px;}
+    .row{grid-template-columns:52px 1fr 22px; gap:14px 20px;}
     .row .tags{margin-left:0;}
     .row-desc{margin-left:0;}
   }
@@ -392,7 +392,6 @@
           <span class="code">01 — Filtres</span>
           <h3>D’un bouton caché à +55 % d’utilisation</h3>
         </div>
-        <span class="status" data-s="draft">Brouillon</span>
         <span class="arrow">→</span>
         <p class="row-desc">J’ai rendu les filtres visibles dans les résultats de recherche, validé ce choix par la data, la recherche utilisateur et des A/B tests, puis conçu l’évolution de tout le système de filtres.</p>
         <span class="tags">Doctolib — T2 2022 — Desktop, web mobile &amp; app — France &amp; Allemagne</span>
@@ -403,7 +402,6 @@
           <span class="code">DOCTOLIB / 02</span>
           <h3>Profile improvements in Italy</h3>
         </div>
-        <span class="status" data-s="draft">Brouillon</span>
         <span class="arrow">→</span>
         <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
         <span class="tags tbd">À compléter</span>
@@ -414,7 +412,6 @@
           <span class="code">DOCTOLIB / 03</span>
           <h3>Avis</h3>
         </div>
-        <span class="status" data-s="draft">Brouillon</span>
         <span class="arrow">→</span>
         <p class="row-desc tbd">Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.</p>
         <span class="tags tbd">À compléter</span>
