@@ -297,6 +297,9 @@
     padding-bottom:6px;
     transition:color .2s, border-color .2s;
   }
+  .ico{width:18px; height:18px; flex:none; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  .contact-email{display:inline-flex; align-items:center; gap:0.35em;}
+  .contact-email .ico-lg{width:0.8em; height:0.8em; stroke-width:1.4;}
   .contact-email:hover{color:var(--poppy);}
   .social-row{
     margin-top:52px;
@@ -307,6 +310,7 @@
     letter-spacing:0.04em;
   }
   .social-row a{
+    display:inline-flex; align-items:center; gap:8px;
     opacity:0.75;
     padding-bottom:4px;
     border-bottom:1px solid transparent;
@@ -345,7 +349,7 @@
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
-      <a href="cv.html">CV</a>
+      <a href="cv.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span>CV</span></a>
     </nav>
     <div class="nav-right"><div class="lang"><span>EN</span><a href="fr/index.html" hreflang="fr" lang="fr">FR</a></div><a class="nav-cta" href="#contact">Get in touch</a></div>
   </div>
@@ -480,9 +484,9 @@
   <div class="wrap reveal">
     <p class="eyebrow">Contact</p>
     <h2>Let's talk about your <em>next product.</em></h2>
-    <a class="contact-email" href="mailto:emilie.tissot2601@gmail.com">emilie.tissot2601@gmail.com</a>
+    <a class="contact-email" href="mailto:emilie.tissot2601@gmail.com"><svg class="ico ico-lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>emilie.tissot2601@gmail.com</a>
     <div class="social-row">
-      <a href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7 18c.8-2.4 2.8-3.6 5-3.6s4.2 1.2 5 3.6"/></svg><span>LinkedIn</span></a>
       <a href="cv.html">CV</a>
     </div>
   </div>
