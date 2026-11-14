@@ -71,11 +71,11 @@
     display:inline-flex; align-items:center; gap:8px;
   }
   .btn:hover{background:var(--accent); border-color:var(--accent);}
-  .contact{display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:32px; padding-top:24px; border-top:1px solid var(--line);}
+  .contact{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:32px; padding-top:24px; border-top:1px solid var(--line);}
   .contact .k{font-family:'IBM Plex Mono', monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); display:block;}
   .ico{width:18px; height:18px; flex:none; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
   .contact .ci{display:flex; align-items:center; gap:8px;}
-  .contact .ci .ico{color:var(--ink-soft);}
+  .contact .btn .ico{width:16px; height:16px;}
   .contact .v{font-weight:500; font-size:0.95rem;}
   .contact a.v{text-decoration:none; border-bottom:1px solid var(--line);}
   .contact a.v:hover{border-color:var(--ink);}
@@ -139,6 +139,7 @@
     .hero{padding:0 0 14px; background:none;}
     .hero h1{font-size:34px;} .hero .role{font-size:16px;} .hero .lead{font-size:11.5px; margin-top:10px; max-width:none;}
     .contact{margin-top:14px; padding-top:10px;}
+    .contact .btn{background:none; color:var(--ink); border:none; padding:0 14px 0 0; font-size:10.5px;}
     .wrap{max-width:none; padding:0;}
     .grid{grid-template-columns:7fr 5fr; gap:28px; padding:18px 0 0;}
     .col > section + section{margin-top:22px;}
@@ -179,8 +180,8 @@
     </div>
     <p class="lead">9 years of experience, now at Doctolib after Meero. An end-to-end, versatile practice, from product to brand, augmented by AI. I’m drawn to meaningful missions.</p>
     <div class="contact">
-      <div class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a class="v" href="mailto:emilie.tissot2601@gmail.com">emilie.tissot2601@gmail.com</a></div>
-      <div class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7 18c.8-2.4 2.8-3.6 5-3.6s4.2 1.2 5 3.6"/></svg><a class="v" href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener">linkedin.com/in/etissot</a></div>
+      <a class="btn" href="mailto:emilie.tissot2601@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>emilie.tissot2601@gmail.com</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/etissot/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7 18c.8-2.4 2.8-3.6 5-3.6s4.2 1.2 5 3.6"/></svg><span>linkedin.com/in/etissot</span></a>
     </div>
   </div>
 </section>
