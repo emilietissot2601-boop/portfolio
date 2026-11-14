@@ -202,6 +202,8 @@
   .row[data-c="poppy"] .thumb{background:rgba(255,75,62,0.08); border-color:rgba(255,75,62,0.4); color:var(--poppy);}
   .row[data-c="cobalt"] .thumb{background:rgba(42,62,255,0.08); border-color:rgba(42,62,255,0.4); color:var(--cobalt);}
   .row[data-c="butter"] .thumb{background:rgba(255,201,60,0.14); border-color:#B8860B; color:#B8860B;}
+  .row .thumb.has-img{border:none; background:none; padding:0;}
+  .thumb.has-img img{width:100%; height:100%; object-fit:contain; display:block;}
   .row-main{display:flex; flex-direction:column; gap:4px;}
   .row .code{
     font-family:'IBM Plex Mono', monospace;
@@ -401,7 +403,7 @@
         <span class="tags">Doctolib — T2 2022 — Desktop, web mobile &amp; app — France &amp; Allemagne</span>
       </a>
       <a class="row" data-c="cobalt" href="case-profile-italy.html">
-        <div class="thumb">D</div>
+        <div class="thumb has-img"><img src="../assets/thumbs/profile-italy.png" alt="Profil praticien"></div>
         <div class="row-main">
           <span class="code">DOCTOLIB / 02</span>
           <h3>Profile improvements in Italy</h3>
