@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profile improvements in Italy — Doctolib — Emilie Tissot</title>
+<title>Profil Italie — Doctolib — Emilie Tissot</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     --paper:#FBF7EF; --ink:#16152B; --ink-soft:#6B6980;
     --line: rgba(22,21,43,0.12);
     --poppy:#FF4B3E; --cobalt:#2A3EFF; --butter:#FFC93C;
-    --accent: var(--poppy);
+    --accent: var(--cobalt);
     --maxw: 860px;
   }
   *{box-sizing:border-box;}
@@ -21,9 +21,13 @@
     font-family:'Inter', sans-serif; font-size:16px; line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
   a{color:inherit;}
+  img{max-width:100%; display:block;}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .wide{max-width:1120px; margin:0 auto; padding:0 32px 56px;}
+  .body-section.intro{border-bottom:none; padding-bottom:0;}
+  @media (max-width:640px){ .wrap,.wide{padding-left:20px; padding-right:20px;} .nav-inner{padding:16px 20px;} }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
     letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;
@@ -59,8 +63,8 @@
     letter-spacing:0.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
     color:#fff; background:var(--accent); margin-bottom:20px;
   }
-  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:680px;}
-  .hero .lead{max-width:560px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
+  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:720px;}
+  .hero .lead{max-width:600px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
 
   .meta-strip{
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
@@ -73,16 +77,89 @@
   .meta-strip .v{font-size:0.98rem; font-weight:500;}
   @media (max-width:640px){ .meta-strip{grid-template-columns:1fr; gap:18px;} }
 
-  .body-section{padding:48px 0; border-bottom:1px solid var(--line);}
+  /* Key figures */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:40px 0; border-bottom:1px solid var(--line);}
+  .stat{padding:0 20px; border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .n{font-family:'Fraunces', serif; font-weight:700; font-size:clamp(2rem,4vw,2.8rem); line-height:1; color:var(--accent);}
+  .stat .l{font-size:0.86rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+  @media (max-width:760px){
+    .stats{grid-template-columns:1fr 1fr; gap:28px 0;}
+    .stat:nth-child(3){border-left:none; padding-left:0;}
+  }
+
+  /* Acts */
+  .act{padding-top:72px; padding-bottom:8px;}
+  .act .num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .act h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; margin-top:10px; max-width:700px;}
+  .act p{color:var(--ink-soft); max-width:640px; margin-top:14px;}
+
+  .body-section{padding-top:48px; padding-bottom:48px; border-bottom:1px solid var(--line);}
   .body-section h2{font-size:clamp(1.5rem, 3vw, 2rem); font-weight:600; margin-bottom:16px;}
+  .body-section h3{font-size:1.2rem; font-weight:600; margin:32px 0 10px;}
   .body-section p{color:var(--ink-soft); max-width:680px;}
+  .body-section p + p{margin-top:12px;}
+  .body-section ul{color:var(--ink-soft); max-width:680px; padding-left:20px;}
+  .body-section strong{color:var(--ink); font-weight:600;}
+
+  /* Cards */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;}
+  .card{border:1px solid var(--line); border-radius:16px; padding:22px; background:rgba(255,255,255,0.5);}
+  .card .k{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .card h3{font-size:1.12rem; margin:10px 0 8px; font-weight:600;}
+  .card p{font-size:0.92rem; line-height:1.6; margin:0;}
+  .card .so{margin-top:12px; padding-top:12px; border-top:1px solid var(--line); font-size:0.88rem; color:var(--ink);}
+  @media (max-width:760px){ .cards{grid-template-columns:1fr;} }
+
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px;}
+  .split .card ul{margin:8px 0 0; padding-left:18px; font-size:0.92rem; color:var(--ink-soft);}
+  .split .card li + li{margin-top:6px;}
+  @media (max-width:640px){ .split{grid-template-columns:1fr;} }
+
+  blockquote{margin:28px 0 0; padding:0 0 0 20px; border-left:3px solid var(--accent); max-width:640px;}
+  blockquote p{font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:1.25rem; line-height:1.4; color:var(--ink) !important;}
+  blockquote cite{display:block; margin-top:8px; font-style:normal; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);}
+
+  table{width:100%; border-collapse:collapse; margin-top:24px; font-size:0.92rem;}
+  th, td{text-align:left; padding:12px 10px; border-bottom:1px solid var(--line);}
+  th{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  td.up{font-weight:600; color:var(--accent);}
+  .table-wrap{overflow-x:auto; max-width:680px;}
+
+  /* Figures */
+  figure{margin:32px 0 0;}
+  figure .frame{background:#EEF4FC; border-radius:18px; padding:28px; display:flex; justify-content:center; align-items:flex-start; gap:28px; flex-wrap:wrap;}
+  figure .frame a{display:block;}
+  figure .frame img{border-radius:10px; box-shadow:0 1px 2px rgba(22,21,43,0.06), 0 8px 24px rgba(22,21,43,0.08); background:#fff;}
+  figure .frame.plain{padding:0; background:none;}
+  figure .frame.plain img{box-shadow:none; border:1px solid var(--line);}
+  .phone{width:260px;}
+  .phone-sm{width:220px;}
+  figcaption{font-size:0.84rem; color:var(--ink-soft); margin-top:12px; max-width:680px;}
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px;}
+  .pair figure{margin:0;}
+  .pair .frame{height:100%;}
+  .label{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:14px; width:100%; text-align:center;}
+  .label.before{color:var(--ink-soft);}
+  .label.after{color:var(--cobalt);}
+  @media (max-width:640px){ .pair{grid-template-columns:1fr;} .phone{width:220px;} figure .frame{padding:18px;} }
+
+  .placeholder{border:1.5px dashed var(--ink-soft); border-radius:18px; padding:48px 24px; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); margin-top:28px;}
+
+  .pill{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.64rem; letter-spacing:0.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--ink-soft); margin-left:6px; vertical-align:middle;}
+  .pill.wip{background:var(--butter); border-color:var(--butter); color:var(--ink);}
+
+  .bridge{margin:56px 0 0; padding:32px; border-radius:18px; background:var(--ink); color:var(--paper);}
+  .bridge .eyebrow{color:rgba(251,247,239,0.6);}
+  .bridge p{color:rgba(251,247,239,0.85) !important; max-width:680px; margin-top:12px;}
+  .bridge ul{margin:14px 0 0; padding-left:20px; color:rgba(251,247,239,0.85); max-width:680px;}
 
   .cta-row{
-    padding:56px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    padding-top:56px; padding-bottom:56px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
   }
   .btn-outline{
     font-family:'IBM Plex Mono', monospace; font-size:0.82rem;
-    border:1px solid var(--line); padding:13px 22px; border-radius:999px;
+    border:1px solid var(--line); padding:13px 22px; border-radius:999px; text-decoration:none;
   }
 
   .nav-right{display:flex; align-items:center; gap:14px;}
@@ -105,39 +182,200 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow" style="margin-bottom:14px;">Doctolib — Healthtech</p>
-    <span class="tag">02 — Profile improvements in Italy</span>
-    <h1>Profile improvements in Italy</h1>
-    <p class="lead tbd">[Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.]</p>
+    <span class="tag">02 — Profil Italie</span>
+    <h1>Repenser la page profil selon la façon dont les patients italiens choisissent</h1>
+    <p class="lead">En Italie, les visites de profil se transformaient quatre fois moins souvent en rendez-vous qu’en France. J’ai retravaillé le profil praticien autour de l’ordre dans lequel les patients italiens choisissent un médecin, et conçu chaque changement pour être testé seul.</p>
+    <p class="eyebrow" style="margin-top:20px;">Doctolib — 2026 — Web mobile &amp; app — Italie</p>
   </div>
 </section>
 
 <section class="wrap">
-  <div class="meta-strip">
-    <div><div class="k">Rôle</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Outils</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Résultat</div><div class="v tbd">À compléter</div></div>
+  <div class="stats">
+    <div class="stat"><div class="n">6 %</div><div class="l">de conversion profil → RDV en Italie, contre 27 % en France et 19 % en Allemagne</div></div>
+    <div class="stat"><div class="n">65 %</div><div class="l">des patients italiens quittent le profil avant de commencer une réservation</div></div>
+    <div class="stat"><div class="n">3 %</div><div class="l">ouvrent la section localisation, pourtant leur critère n°1</div></div>
+    <div class="stat"><div class="n">10</div><div class="l">entretiens patients en Italie</div></div>
+  </div>
+</section>
+
+<!-- ============ ACTE 1 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 1 · Discovery</div>
+  <h2>Comprendre pourquoi l’Italie ne convertit pas</h2>
+</section>
+
+<section class="wrap body-section">
+  <h2>Le problème</h2>
+  <p>Le profil praticien, c’est là où le patient décide de réserver ou non. En Italie, cette décision tournait mal bien plus souvent que sur nos marchés matures : <strong>6 % des visites de profil menaient à un rendez-vous, contre 27 % en France et 19 % en Allemagne.</strong></p>
+  <p>L’écart persistait même dans des villes bien pourvues comme Milan, ce qui écartait un manque de praticiens. Le problème, c’était la page elle-même.</p>
+  <div class="placeholder">Écran à ajouter : le profil mobile italien avant la refonte</div>
+</section>
+
+<section class="wrap body-section">
+  <h2>Ce que disaient les données</h2>
+  <p>L’essentiel des informations dont les patients avaient besoin existait déjà sur la page. Ils ne le voyaient simplement jamais.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="k">Insight 01</div>
+      <h3>Du contenu caché derrière « Voir plus »</h3>
+      <p>Les boutons d’ouverture étaient en haut à droite de chaque carte, avec le contenu replié par défaut. Seuls 3 % des patients ouvraient la section localisation.</p>
+      <div class="so">→ Afficher par défaut, déplier depuis le bas.</div>
+    </div>
+    <div class="card">
+      <div class="k">Insight 02</div>
+      <h3>La moitié de la page n’est jamais vue</h3>
+      <p>50 % des patients ne descendaient pas plus bas que les tarifs. Tout ce qui se trouvait sous le milieu de page touchait au mieux la moitié des visiteurs.</p>
+      <div class="so">→ Remonter l’essentiel en haut de page.</div>
+    </div>
+    <div class="card">
+      <div class="k">Insight 03</div>
+      <h3>Les visiteurs venus de Google repartent</h3>
+      <p>30 % des patients arrivés depuis Google partaient sans rien faire. Beaucoup retournaient à leurs résultats au lieu d’explorer Doctolib.</p>
+      <div class="so">→ Leur donner une raison de continuer ici.</div>
+    </div>
   </div>
 </section>
 
 <section class="wrap body-section">
-  <h2>Contexte</h2>
-  <p class="tbd">[Décris ici le contexte du projet : quelle équipe, quel produit, quel enjeu business ou utilisateur.]</p>
+  <h2>Ce que disaient les patients</h2>
+  <p>Dix entretiens avec des patients italiens ont révélé un ordre clair dans leur choix d’un praticien. Il est devenu la colonne vertébrale du projet.</p>
+  <div class="placeholder">Schéma à ajouter : Localisation → Confiance → Expertise → Prix → Disponibilités</div>
+  <p style="margin-top:20px;"><strong>La localisation passe en premier</strong>, puis la confiance, où les avis et les notes sont le signal le plus fort. Les patients abandonnaient un profil quand l’expertise du praticien n’était pas claire.</p>
 </section>
 
 <section class="wrap body-section">
-  <h2>Approche</h2>
-  <p class="tbd">[Décris ici ta méthode : recherche utilisateur, ateliers, wireframes, itérations, tests.]</p>
+  <h2>Ce que fait le marché</h2>
+  <p>J’ai fait un benchmark des principales plateformes de prise de rendez-vous, italiennes et internationales. Elles suivent les mêmes conventions, que le profil Doctolib ne suivait pas :</p>
+  <ul>
+    <li><strong>Les infos clés en haut</strong> de la page</li>
+    <li><strong>Une navigation par onglets</strong> pour accéder au détail</li>
+    <li><strong>Un bouton de réservation qui reste visible</strong> au scroll</li>
+    <li><strong>Les boutons d’ouverture en bas</strong> de chaque section</li>
+  </ul>
+  <div class="placeholder">Visuel à ajouter : benchmark des pages profil concurrentes</div>
+</section>
+
+<!-- ============ ACTE 2 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 2 · Design</div>
+  <h2>Reconstruire la page selon l’ordre de décision</h2>
+  <p>Un principe a guidé chaque changement : montrer aux patients ce dont ils ont besoin pour décider, sans qu’ils aient à le chercher. Chaque réponse design correspond à un critère de décision.</p>
+</section>
+
+<section class="wrap body-section">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Critère patient</th><th>Réponse design</th></tr></thead>
+      <tbody>
+        <tr><td>Tous</td><td><strong>Lisibilité :</strong> des boutons explicites « Voir les 6 formations » en bas de chaque carte, des sections fusionnées, des horaires affichés en entier</td></tr>
+        <tr><td>Localisation</td><td><strong>Carte visible :</strong> l’adresse du praticien affichée dès l’arrivée, l’itinéraire à un tap</td></tr>
+        <tr><td>Confiance · Prix · Expertise</td><td><strong>Nouvel en-tête :</strong> jusqu’à trois lignes visibles sans scroller, et une barre de navigation qui reste en haut</td></tr>
+        <tr><td>Expertise</td><td><strong>Section Expertise</strong> en pastilles, parcours et formations en timeline</td></tr>
+        <tr><td>Disponibilités</td><td><strong>Bouton de réservation toujours visible</strong> sur mobile pendant le scroll</td></tr>
+        <tr><td>Établissements</td><td><strong>Meet the team :</strong> les praticiens filtrés par spécialité, avec leurs notes et leur expertise</td></tr>
+        <tr><td>Pas le bon praticien ?</td><td><strong>Similar places nearby :</strong> un carrousel de cinq alternatives pour continuer sur Doctolib</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap body-section intro">
+  <h2>La base : rendre le contenu trouvable</h2>
+  <p>Avant d’ajouter quoi que ce soit, j’ai rendu le contenu existant facile à trouver. Chaque bouton d’ouverture est passé en bas de sa carte et dit ce qu’il ouvre (« Voir les 6 formations » plutôt que « Voir plus »). Localisation et accessibilité ont fusionné en une seule carte. Les horaires, qui avaient le plus fort taux de clic sur « Voir plus », sont désormais entièrement visibles.</p>
+  <p>Cette mise en page est devenue la base sur laquelle tous les autres changements viennent se brancher.</p>
+</section>
+<div class="wide">
+  <div class="pair">
+    <figure><div class="placeholder" style="margin-top:0;">Avant</div><figcaption>« Voir plus » dans le coin, contenu replié.</figcaption></figure>
+    <figure><div class="placeholder" style="margin-top:0;">Après</div><figcaption>Des boutons explicites en bas de chaque carte.</figcaption></figure>
+  </div>
+</div>
+
+<section class="wrap body-section intro">
+  <h2>Zoom : l’en-tête du profil</h2>
+  <p>Sur mobile, le haut du profil n’affichait qu’un nom, une photo, une spécialité et parfois une note. Il fallait parcourir toute la page pour en savoir plus.</p>
+  <p>Le nouvel en-tête ajoute jusqu’à trois lignes sous le nom : <strong>la note et le nombre d’avis</strong> (avec les années d’expérience), <strong>le premier motif de consultation et son prix</strong>, et <strong>l’expertise</strong>, ou la taille de l’équipe pour un établissement. Chaque ligne n’apparaît que si la donnée existe : aucun état vide. Un tap ouvre le même détail que la section correspondante plus bas.</p>
+  <p>Une barre de navigation fixe et swipeable sous l’en-tête liste uniquement les sections présentes sur ce profil.</p>
+</section>
+<div class="wide">
+  <div class="pair">
+    <figure><div class="placeholder" style="margin-top:0;">En-tête avant</div></figure>
+    <figure><div class="placeholder" style="margin-top:0;">En-tête après + navigation</div></figure>
+  </div>
+</div>
+
+<section class="wrap body-section intro">
+  <h2>Zoom : une carte qu’on voit vraiment</h2>
+  <p>La localisation est la première chose que regardent les patients italiens, mais la carte était cachée derrière un « Voir plus » ouvert par 3 % d’entre eux. Elle s’affiche maintenant dès l’arrivée, avec le bouton « Voir l’itinéraire » juste à côté.</p>
+  <p>Le consentement reste obligatoire : les patients qui ne l’ont pas encore donné voient un court message dans la zone de la carte. En entretien, les patients italiens l’acceptaient volontiers quand l’intérêt était clair.</p>
+  <div class="placeholder">Écran à ajouter : la carte de localisation avec la carte visible et le consentement</div>
+</section>
+
+<section class="wrap body-section">
+  <h2>Aider les patients à continuer leur recherche</h2>
+  <div class="split">
+    <div class="card">
+      <div class="k">Établissements</div>
+      <h3>Meet the team</h3>
+      <p>La liste de l’équipe était déjà la section la plus cliquée des profils d’établissement, mais elle affichait une liste indifférenciée. Elle s’ouvre maintenant sur des chiffres clés, des filtres par spécialité et des cartes praticien avec notes et expertise.</p>
+    </div>
+    <div class="card">
+      <div class="k">Tous les profils</div>
+      <h3>Similar places nearby</h3>
+      <p>Beaucoup de patients venus de Google retournaient à leurs résultats quand un profil ne leur convenait pas. Un carrousel en bas de page propose maintenant jusqu’à cinq alternatives proches.</p>
+    </div>
+  </div>
+  <div class="placeholder">Écrans à ajouter : Meet the team et Similar places nearby</div>
+</section>
+
+<!-- ============ ACTE 3 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 3 · Livraison</div>
+  <h2>Pensé pour être testé, un changement à la fois</h2>
+</section>
+
+<section class="wrap body-section">
+  <p>Plutôt que de livrer une grosse refonte, j’ai découpé le travail en six changements indépendants, chacun avec son propre A/B test. Ainsi, on sait ce que vaut chaque changement au lieu de deviner lequel a fait bouger les chiffres.</p>
+  <ul>
+    <li><strong>Italie uniquement :</strong> la France et l’Allemagne ne changent pas, et chaque changement peut être désactivé seul.</li>
+    <li><strong>Une seule dépendance :</strong> la barre de navigation repose sur le nouvel en-tête, qui est donc livré et validé en premier.</li>
+    <li><strong>Des garde-fous :</strong> afficher plus de contenu par défaut est surveillé au regard du temps de chargement.</li>
+  </ul>
+  <p>En parallèle, l’équipe a rendu la page profil plus modulaire pour pouvoir itérer plus vite.</p>
+</section>
+
+<section class="wrap body-section">
+  <h2>Comment on mesure le succès</h2>
+  <div class="split">
+    <div class="card">
+      <div class="k">Principal</div>
+      <h3>Conversion profil → RDV</h3>
+      <p>En Italie, à partir de 6 %.</p>
+    </div>
+    <div class="card">
+      <div class="k">Secondaires</div>
+      <h3>Engagement</h3>
+      <p>Taux de rebond depuis les moteurs de recherche, abandons avant toute action, profondeur de scroll et clics sur chaque nouvelle section.</p>
+    </div>
+  </div>
+  <div class="bridge">
+    <p class="eyebrow">Statut <span class="pill wip">En cours</span></p>
+    <p>Les A/B tests sont lancés fonctionnalité par fonctionnalité. Résultats à venir.</p>
+  </div>
 </section>
 
 <section class="wrap body-section" style="border-bottom:none;">
-  <h2>Résultat</h2>
-  <p class="tbd">[Décris ici l'impact du projet : chiffres, retours utilisateurs, adoption.]</p>
+  <h2>Ce que j’ai appris</h2>
+  <ul class="tbd">
+    <li><strong>Partir de la façon dont les gens décident, pas des fonctionnalités.</strong> L’ordre de décision a donné à chaque changement une raison claire d’exister.</li>
+    <li><strong>Le contenu est souvent déjà là.</strong> Le rendre visible passait avant d’ajouter du neuf.</li>
+    <li><strong>Découper pour apprendre.</strong> Un test par changement rend chaque résultat lisible.</li>
+  </ul>
 </section>
 
 <section class="wrap cta-row">
   <a class="back" href="index.html">← Retour au portfolio</a>
-  <span class="btn-outline tbd">Étude de cas en cours de rédaction</span>
+  <a class="btn-outline" href="case-reviews.html">Projet suivant →</a>
 </section>
 
 </body>
