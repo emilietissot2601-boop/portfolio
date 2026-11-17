@@ -12,7 +12,7 @@
     --paper:#FBF7EF; --ink:#16152B; --ink-soft:#6B6980;
     --line: rgba(22,21,43,0.12);
     --poppy:#FF4B3E; --cobalt:#2A3EFF; --butter:#FFC93C;
-    --accent: var(--butter);
+    --accent: #B8860B;
     --maxw: 860px;
   }
   *{box-sizing:border-box;}
@@ -21,9 +21,13 @@
     font-family:'Inter', sans-serif; font-size:16px; line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
+  h1,h2,h3{font-family:'Fraunces', serif; margin:0; line-height:1.08;}
   a{color:inherit;}
+  img{max-width:100%; display:block;}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .wide{max-width:1120px; margin:0 auto; padding:0 32px 56px;}
+  .body-section.intro{border-bottom:none; padding-bottom:0;}
+  @media (max-width:640px){ .wrap,.wide{padding-left:20px; padding-right:20px;} .nav-inner{padding:16px 20px;} }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
     letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;
@@ -51,7 +55,7 @@
 
   .hero{padding:76px 0 48px; border-bottom:1px solid var(--line); position:relative; overflow:hidden;
     background:
-      radial-gradient(circle at 90% -20%, rgba(255,201,60,0.22), transparent 55%),
+      radial-gradient(circle at 90% -20%, rgba(255,201,60,0.28), transparent 55%),
       var(--paper);
   }
   .tag{
@@ -59,8 +63,8 @@
     letter-spacing:0.06em; text-transform:uppercase; padding:6px 12px; border-radius:999px;
     color:#fff; background:var(--accent); margin-bottom:20px;
   }
-  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:680px;}
-  .hero .lead{max-width:560px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
+  .hero h1{font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; max-width:720px;}
+  .hero .lead{max-width:600px; margin-top:20px; color:var(--ink-soft); font-size:1.03rem;}
 
   .meta-strip{
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
@@ -73,16 +77,89 @@
   .meta-strip .v{font-size:0.98rem; font-weight:500;}
   @media (max-width:640px){ .meta-strip{grid-template-columns:1fr; gap:18px;} }
 
-  .body-section{padding:48px 0; border-bottom:1px solid var(--line);}
+  /* Key figures */
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:40px 0; border-bottom:1px solid var(--line);}
+  .stat{padding:0 20px; border-left:1px solid var(--line);}
+  .stat:first-child{border-left:none; padding-left:0;}
+  .stat .n{font-family:'Fraunces', serif; font-weight:700; font-size:clamp(2rem,4vw,2.8rem); line-height:1; color:var(--accent);}
+  .stat .l{font-size:0.86rem; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+  @media (max-width:760px){
+    .stats{grid-template-columns:1fr 1fr; gap:28px 0;}
+    .stat:nth-child(3){border-left:none; padding-left:0;}
+  }
+
+  /* Acts */
+  .act{padding-top:72px; padding-bottom:8px;}
+  .act .num{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .act h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; margin-top:10px; max-width:700px;}
+  .act p{color:var(--ink-soft); max-width:640px; margin-top:14px;}
+
+  .body-section{padding-top:48px; padding-bottom:48px; border-bottom:1px solid var(--line);}
   .body-section h2{font-size:clamp(1.5rem, 3vw, 2rem); font-weight:600; margin-bottom:16px;}
+  .body-section h3{font-size:1.2rem; font-weight:600; margin:32px 0 10px;}
   .body-section p{color:var(--ink-soft); max-width:680px;}
+  .body-section p + p{margin-top:12px;}
+  .body-section ul{color:var(--ink-soft); max-width:680px; padding-left:20px;}
+  .body-section strong{color:var(--ink); font-weight:600;}
+
+  /* Cards */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;}
+  .card{border:1px solid var(--line); border-radius:16px; padding:22px; background:rgba(255,255,255,0.5);}
+  .card .k{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  .card h3{font-size:1.12rem; margin:10px 0 8px; font-weight:600;}
+  .card p{font-size:0.92rem; line-height:1.6; margin:0;}
+  .card .so{margin-top:12px; padding-top:12px; border-top:1px solid var(--line); font-size:0.88rem; color:var(--ink);}
+  @media (max-width:760px){ .cards{grid-template-columns:1fr;} }
+
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px;}
+  .split .card ul{margin:8px 0 0; padding-left:18px; font-size:0.92rem; color:var(--ink-soft);}
+  .split .card li + li{margin-top:6px;}
+  @media (max-width:640px){ .split{grid-template-columns:1fr;} }
+
+  blockquote{margin:28px 0 0; padding:0 0 0 20px; border-left:3px solid var(--accent); max-width:640px;}
+  blockquote p{font-family:'Fraunces', serif; font-style:italic; font-weight:600; font-size:1.25rem; line-height:1.4; color:var(--ink) !important;}
+  blockquote cite{display:block; margin-top:8px; font-style:normal; font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);}
+
+  table{width:100%; border-collapse:collapse; margin-top:24px; font-size:0.92rem;}
+  th, td{text-align:left; padding:12px 10px; border-bottom:1px solid var(--line);}
+  th{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  td.up{font-weight:600; color:var(--accent);}
+  .table-wrap{overflow-x:auto; max-width:680px;}
+
+  /* Figures */
+  figure{margin:32px 0 0;}
+  figure .frame{background:#EEF4FC; border-radius:18px; padding:28px; display:flex; justify-content:center; align-items:flex-start; gap:28px; flex-wrap:wrap;}
+  figure .frame a{display:block;}
+  figure .frame img{border-radius:10px; box-shadow:0 1px 2px rgba(22,21,43,0.06), 0 8px 24px rgba(22,21,43,0.08); background:#fff;}
+  figure .frame.plain{padding:0; background:none;}
+  figure .frame.plain img{box-shadow:none; border:1px solid var(--line);}
+  .phone{width:260px;}
+  .phone-sm{width:220px;}
+  figcaption{font-size:0.84rem; color:var(--ink-soft); margin-top:12px; max-width:680px;}
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px;}
+  .pair figure{margin:0;}
+  .pair .frame{height:100%;}
+  .label{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:14px; width:100%; text-align:center;}
+  .label.before{color:var(--ink-soft);}
+  .label.after{color:var(--cobalt);}
+  @media (max-width:640px){ .pair{grid-template-columns:1fr;} .phone{width:220px;} figure .frame{padding:18px;} }
+
+  .placeholder{border:1.5px dashed var(--ink-soft); border-radius:18px; padding:48px 24px; text-align:center; font-family:'IBM Plex Mono', monospace; font-size:0.75rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); margin-top:28px;}
+
+  .pill{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:0.64rem; letter-spacing:0.06em; text-transform:uppercase; padding:3px 9px; border-radius:999px; border:1px solid var(--line); color:var(--ink-soft); margin-left:6px; vertical-align:middle;}
+  .pill.wip{background:var(--butter); border-color:var(--butter); color:var(--ink);}
+
+  .bridge{margin:56px 0 0; padding:32px; border-radius:18px; background:var(--ink); color:var(--paper);}
+  .bridge .eyebrow{color:rgba(251,247,239,0.6);}
+  .bridge p{color:rgba(251,247,239,0.85) !important; max-width:680px; margin-top:12px;}
+  .bridge ul{margin:14px 0 0; padding-left:20px; color:rgba(251,247,239,0.85); max-width:680px;}
 
   .cta-row{
-    padding:56px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+    padding-top:56px; padding-bottom:56px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
   }
   .btn-outline{
     font-family:'IBM Plex Mono', monospace; font-size:0.82rem;
-    border:1px solid var(--line); padding:13px 22px; border-radius:999px;
+    border:1px solid var(--line); padding:13px 22px; border-radius:999px; text-decoration:none;
   }
 
   .nav-right{display:flex; align-items:center; gap:14px;}
@@ -105,39 +182,168 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow" style="margin-bottom:14px;">Doctolib — Healthtech</p>
     <span class="tag">03 — Avis</span>
-    <h1>Avis</h1>
-    <p class="lead tbd">[Décris ici le problème initial, pour qui, et pourquoi c'était prioritaire.]</p>
+    <h1>Collecter des avis auxquels les patients peuvent vraiment se fier</h1>
+    <p class="lead">Les avis sont le premier signal de confiance des patients italiens, mais Doctolib n’affichait que cinq avis Google sur une partie des profils. J’ai conçu la façon dont nous collectons nos propres avis vérifiés après chaque rendez-vous, à partir de ce que les patients nous ont dit d’un avis utile.</p>
+    <p class="eyebrow" style="margin-top:20px;">Doctolib — 2026 — E-mail, push, web mobile &amp; app — Italie</p>
   </div>
 </section>
 
 <section class="wrap">
-  <div class="meta-strip">
-    <div><div class="k">Rôle</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Outils</div><div class="v tbd">À compléter</div></div>
-    <div><div class="k">Résultat</div><div class="v tbd">À compléter</div></div>
+  <div class="stats">
+    <div class="stat"><div class="n">54 %</div><div class="l">consultent les avis la plupart du temps ou à chaque fois avant de réserver un spécialiste privé</div></div>
+    <div class="stat"><div class="n">67 %</div><div class="l">placent « l’auteur a vraiment eu un rendez-vous » dans leur top 3</div></div>
+    <div class="stat"><div class="n">5 %</div><div class="l">ont cliqué sur « Voir plus d’avis » dans la section Google</div></div>
+    <div class="stat"><div class="n">280+</div><div class="l">patients interrogés, plus une étude de tri de cartes</div></div>
   </div>
 </section>
 
-<section class="wrap body-section">
-  <h2>Contexte</h2>
-  <p class="tbd">[Décris ici le contexte du projet : quelle équipe, quel produit, quel enjeu business ou utilisateur.]</p>
+<!-- ============ ACTE 1 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 1 · Contexte</div>
+  <h2>Pourquoi les avis Google ne suffisaient pas</h2>
 </section>
 
 <section class="wrap body-section">
-  <h2>Approche</h2>
-  <p class="tbd">[Décris ici ta méthode : recherche utilisateur, ateliers, wireframes, itérations, tests.]</p>
+  <h2>Le problème</h2>
+  <p>Les patients italiens s’appuient sur les avis pour choisir un praticien qu’ils n’ont jamais vu. Depuis juin 2026, Doctolib affichait des avis Google sur les profils italiens. Sans effet significatif sur les rendez-vous.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="k">Limite 01</div>
+      <h3>Une couverture faible</h3>
+      <p>Seule la moitié de nos profils pouvait être reliée à Google, et les avis ne s’affichaient finalement que sur environ 2 500 d’entre eux.</p>
+    </div>
+    <div class="card">
+      <div class="k">Limite 02</div>
+      <h3>Cinq avis, sans nuance</h3>
+      <p>Google ne partage que cinq avis, surtout des 5 étoiles ou des 1 étoile. Seuls 5 % des patients cliquaient pour en voir plus.</p>
+    </div>
+    <div class="card">
+      <div class="k">Limite 03</div>
+      <h3>Rien de vérifié</h3>
+      <p>Rien ne prouvait que l’auteur avait vraiment consulté le praticien, alors que tous les concurrents italiens ont leurs propres avis vérifiés.</p>
+    </div>
+  </div>
+  <div class="placeholder">Écran à ajouter : la section avis Google sur un profil italien</div>
+</section>
+
+<section class="wrap body-section">
+  <h2>Ce qui existait déjà</h2>
+  <p>Doctolib envoyait déjà une enquête de satisfaction après les rendez-vous, mais elle était anonyme, sans texte libre, sur un design ancien, et n’obtenait qu’environ 7 % de réponses, surtout de patients satisfaits.</p>
+  <p>Le vrai défi, c’était le volume. En ne sollicitant que les patients ayant réservé en ligne, il faudrait un an pour atteindre 12 avis sur la moitié de nos praticiens. <strong>Le parcours devait aussi toucher les patients ayant réservé hors ligne</strong>, qui représentent la majorité des rendez-vous en Italie.</p>
+</section>
+
+<!-- ============ ACTE 2 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 2 · Recherche</div>
+  <h2>Ce qui fait qu’un avis vaut la peine d’être lu</h2>
+  <p>Nous avons mené une enquête sur Screeb et un tri de cartes non modéré sur Maze avec des patients italiens, pour comprendre comment ils lisent les avis avant de choisir un nouveau praticien.</p>
+</section>
+
+<section class="wrap body-section">
+  <h2>Trois questions, trois réponses</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="k">Comment ils choisissent</div>
+      <h3>La personne avant le lieu</h3>
+      <p>« Écoute avec empathie » (93,5 % dans le top 3) et « explique clairement » (85,5 %) devancent largement l’équipement, la ponctualité ou l’accueil du cabinet.</p>
+      <div class="so">→ Interroger d’abord sur la relation humaine.</div>
+    </div>
+    <div class="card">
+      <div class="k">Ce qui rend un avis utile</div>
+      <h3>La preuve qu’il est réel</h3>
+      <p>Une visite vérifiée (67,3 %) et un profil vérifié (55,1 %) arrivent en tête, puis le détail et la fraîcheur. Les photos arrivent en dernier (4,1 %).</p>
+      <div class="so">→ Ne solliciter que les patients venus en consultation.</div>
+    </div>
+    <div class="card">
+      <div class="k">Comment ils les lisent</div>
+      <h3>Le simple l’emporte</h3>
+      <p>La répartition des notes (68,2 %) et le tri par note ou par date sont les plus utilisés. Filtres par mot-clé et résumés IA arrivent en dernier.</p>
+      <div class="so">→ Collecter des notes structurées pour les afficher ensuite.</div>
+    </div>
+  </div>
+  <div class="placeholder">Visuel à ajouter : résultats du tri de cartes</div>
+</section>
+
+<!-- ============ ACTE 3 ============ -->
+<section class="wrap act">
+  <div class="num">Partie 3 · Design</div>
+  <h2>Un avis en une minute, juste après le rendez-vous</h2>
+</section>
+
+<section class="wrap body-section intro">
+  <h2>Le bon moment, le bon patient</h2>
+  <p>À 20 h le jour du rendez-vous, les patients reçoivent un e-mail et une notification push : « Comment s’est passé votre rendez-vous ? Ça ne prend qu’une minute. » Le lien ouvre le formulaire dans l’app Doctolib si elle est installée, sinon dans le navigateur, sans connexion.</p>
+  <ul>
+    <li><strong>Uniquement de vraies consultations :</strong> absences, annulations, téléconsultations et rendez-vous pris pour un proche sont exclus, pour que chaque avis vienne de la personne présente.</li>
+    <li><strong>Réservations en ligne et hors ligne,</strong> pour atteindre le volume nécessaire.</li>
+    <li><strong>Pas de lassitude :</strong> une demande par praticien et par an, 14 jours pour répondre, et elle remplace l’ancienne enquête au lieu d’ajouter un second e-mail.</li>
+  </ul>
+  <div class="placeholder">Écrans à ajouter : e-mail et notification push</div>
+</section>
+
+<section class="wrap body-section intro">
+  <h2>Zoom : le formulaire d’avis</h2>
+  <p>Le formulaire s’ouvre sur un résumé du rendez-vous (praticien, date, lieu et motif) pour que le patient sache exactement ce qu’il évalue. Les questions reprennent ce que les patients ont dit compter pour eux :</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question</th><th>Pourquoi</th></tr></thead>
+      <tbody>
+        <tr><td>Recommanderiez-vous ce praticien ? <span class="pill">Obligatoire</span></td><td>La recommandation d’un proche est le signal de confiance ultime</td></tr>
+        <tr><td>Chaleur et écoute</td><td>Critère n°1 des patients</td></tr>
+        <tr><td>Clarté des explications</td><td>Critère n°2 des patients</td></tr>
+        <tr><td>Équipement · Temps d’attente</td><td>Critères secondaires, mais un contexte utile</td></tr>
+        <tr><td>Racontez votre expérience <span class="pill">Facultatif</span></td><td>Les avis détaillés sont très appréciés, avec un rappel pour ne pas partager de détails médicaux</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:20px;">Les sous-notes apportent la nuance qui manquait aux avis Google : on peut adorer son praticien et trouver l’attente trop longue. Seuls la recommandation et le consentement à la publication sont obligatoires, pour que le formulaire reste rapide.</p>
+</section>
+<div class="wide">
+  <div class="pair">
+    <figure><div class="placeholder" style="margin-top:0;">Formulaire : résumé du RDV et notes</div></figure>
+    <figure><div class="placeholder" style="margin-top:0;">Formulaire : texte libre, consentement et remerciement</div></figure>
+  </div>
+</div>
+
+<section class="wrap body-section">
+  <h2>Embarquer les praticiens</h2>
+  <p>Les administrateurs peuvent activer ou désactiver l’e-mail d’avis dans leurs réglages, et les praticiens sont prévenus 15 jours avant le lancement. Ensuite, ils verront leurs avis agrégés en scores pour chaque question, pour en comprendre l’intérêt plutôt que de désactiver la fonctionnalité.</p>
+  <div class="placeholder">Écran à ajouter : réglages praticien et scores « Satisfaction patient »</div>
+</section>
+
+<section class="wrap body-section">
+  <h2>La suite</h2>
+  <div class="split">
+    <div class="card">
+      <div class="k">Mesurer</div>
+      <h3>Taux de réponse</h3>
+      <p>Part des patients sollicités qui laissent un avis, volume d’avis et note moyenne par praticien.</p>
+    </div>
+    <div class="card">
+      <div class="k">Ensuite</div>
+      <h3>Affichage sur les profils</h3>
+      <p>Badges de vérification, répartition des notes et tri par note ou par date : les fonctionnalités que les patients disent utiliser le plus.</p>
+    </div>
+  </div>
+  <div class="bridge">
+    <p class="eyebrow">Statut <span class="pill wip">En cours</span></p>
+    <p>Déploiement progressif en Italie. Résultats à venir.</p>
+  </div>
 </section>
 
 <section class="wrap body-section" style="border-bottom:none;">
-  <h2>Résultat</h2>
-  <p class="tbd">[Décris ici l'impact du projet : chiffres, retours utilisateurs, adoption.]</p>
+  <h2>Ce que j’ai appris</h2>
+  <ul class="tbd">
+    <li><strong>La collecte est aussi un sujet de design.</strong> Ce qu’on demande, et quand, décide de ce qu’on pourra montrer ensuite.</li>
+    <li><strong>La confiance vient de la preuve.</strong> Les patients se soucient moins du nombre d’avis que de savoir qu’ils sont réels.</li>
+    <li><strong>Concevoir pour les deux côtés.</strong> Sans les praticiens, il n’y a pas d’avis à montrer.</li>
+  </ul>
 </section>
 
 <section class="wrap cta-row">
   <a class="back" href="index.html">← Retour au portfolio</a>
-  <span class="btn-outline tbd">Étude de cas en cours de rédaction</span>
+  <a class="btn-outline" href="case-filters.html">Projet suivant →</a>
 </section>
 
 </body>
