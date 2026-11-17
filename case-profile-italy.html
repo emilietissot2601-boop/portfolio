@@ -184,17 +184,17 @@
   <div class="wrap">
     <span class="tag">02 — Italy profile</span>
     <h1>Designing the profile page around how Italian patients choose</h1>
-    <p class="lead">In Italy, profile visits turned into bookings four times less often than in France. I reworked the practitioner profile around the order in which Italian patients choose a doctor, and designed each change to be tested on its own.</p>
+    <p class="lead">In Italy, profile visits turned into bookings four times less often than in France. I reworked the practitioner profile around the order in which Italian patients choose a doctor, and tested each change on its own. Adding decision content lifted bookings by up to +5.1%; moving existing content around did not.</p>
     <p class="eyebrow" style="margin-top:20px;">Doctolib — 2026 — Mobile web &amp; app — Italy</p>
   </div>
 </section>
 
 <section class="wrap">
   <div class="stats">
-    <div class="stat"><div class="n">6%</div><div class="l">profile-to-booking conversion in Italy, vs. 27% in France and 19% in Germany</div></div>
-    <div class="stat"><div class="n">65%</div><div class="l">of Italian patients leave the profile before starting a booking</div></div>
-    <div class="stat"><div class="n">3%</div><div class="l">open the location section, yet location is their #1 criterion</div></div>
-    <div class="stat"><div class="n">10</div><div class="l">patient interviews in Italy</div></div>
+    <div class="stat"><div class="n">+5.1%</div><div class="l">bookings with the sticky “Book” button</div></div>
+    <div class="stat"><div class="n">+3.4%</div><div class="l">bookings with the discoverability redesign</div></div>
+    <div class="stat"><div class="n">+2.9%</div><div class="l">bookings with the Expertise section</div></div>
+    <div class="stat"><div class="n">6%</div><div class="l">starting point: profile-to-booking conversion in Italy, vs. 27% in France</div></div>
   </div>
 </section>
 
@@ -308,6 +308,7 @@
   <h2>Zoom: a map you can actually see</h2>
   <p>Location is the first thing Italian patients look at, yet the map sat behind a “See more” that 3% of them opened. The map now shows on page load, with the “See itinerary” button next to it.</p>
   <p>Map consent remains mandatory: patients who haven't consented see a short prompt in the map area. In interviews, Italian patients accepted it readily when the value was clear.</p>
+  <p><strong>Spoiler:</strong> this is the change that taught us the most. See the results below.</p>
   <div class="placeholder">Screen to add: location card with the visible map and consent prompt</div>
 </section>
 
@@ -345,31 +346,51 @@
 </section>
 
 <section class="wrap body-section">
-  <h2>How we measure success</h2>
-  <div class="split">
+  <h2>Results</h2>
+  <p>Each change ran as its own A/B test in Italy, measured on private bookings.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Change</th><th>Bookings</th><th>Reading</th></tr></thead>
+      <tbody>
+        <tr><td>Sticky “Book” button</td><td class="up">+5.1%</td><td>+11% more patients entering the booking funnel</td></tr>
+        <tr><td>Discoverability redesign</td><td class="up">+3.4%</td><td>Clearer, easier-to-reach “See all” buttons</td></tr>
+        <tr><td>Expertise section</td><td class="up">+2.9%</td><td>+3.3% for GPs and paediatricians (significant)</td></tr>
+        <tr><td>Hero summary rows</td><td>Flat to −4.1%</td><td>The price row was tapped by only 7–8% of patients</td></tr>
+        <tr><td>Section reorder, Meet the team, Similar places</td><td>No significant effect</td><td>Rearranging didn’t change the decision</td></tr>
+        <tr><td>Map visible on the profile</td><td>−5.6%</td><td>+1.3% for GPs and paediatricians</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap body-section">
+  <h2>What the results taught us</h2>
+  <div class="cards">
     <div class="card">
-      <div class="k">Primary</div>
-      <h3>Profile-to-booking conversion</h3>
-      <p>In Italy, from a 6% baseline.</p>
+      <div class="k">Learning 01</div>
+      <h3>Content, not layout</h3>
+      <p>Re-arranging what we already showed never moved bookings. Adding information that helps people decide, like expertise, did.</p>
     </div>
     <div class="card">
-      <div class="k">Secondary</div>
-      <h3>Engagement</h3>
-      <p>Bounce rate from search engines, drop-off before any action, scroll depth, and click-through for each new section.</p>
+      <div class="k">Learning 02</div>
+      <h3>What people say ≠ what they do</h3>
+      <p>Patients ranked location first in interviews, yet showing the map more prominently lowered bookings for paid specialists. Proximity still matters, as an input to search rather than as a display.</p>
+    </div>
+    <div class="card">
+      <div class="k">Learning 03</div>
+      <h3>Fewer steps win</h3>
+      <p>Only changes that bring many more patients into the booking flow move bookings. The sticky button did exactly that.</p>
     </div>
   </div>
-  <div class="bridge">
-    <p class="eyebrow">Status <span class="pill wip">In progress</span></p>
-    <p>The A/B tests are rolling out feature by feature. Results to come.</p>
-  </div>
+  <p style="margin-top:24px;">Most patients land from Google and don’t know the practitioner yet. They need trust and social proof to choose, more than navigation. These learnings now feed Doctolib’s search vision for 2027.</p>
 </section>
 
 <section class="wrap body-section" style="border-bottom:none;">
   <h2>What I learned</h2>
-  <ul class="tbd">
-    <li><strong>Start from how people decide, not from features.</strong> The decision order gave every change a clear reason to exist.</li>
-    <li><strong>Often the content is already there.</strong> Making it visible came before adding anything new.</li>
-    <li><strong>Split to learn.</strong> One test per change makes each result readable.</li>
+  <ul>
+    <li><strong>Test what people say against what they do.</strong> Research told us where to look; A/B tests told us what actually helps patients book.</li>
+    <li><strong>Often the content is already there.</strong> Making it reachable paid off; reshuffling it didn’t.</li>
+    <li><strong>Split to learn.</strong> One test per change made every result readable, including the ones that failed.</li>
   </ul>
 </section>
 
