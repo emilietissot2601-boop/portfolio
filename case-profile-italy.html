@@ -124,6 +124,10 @@
   th, td{text-align:left; padding:12px 10px; border-bottom:1px solid var(--line);}
   th{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
   td.up{font-weight:600; color:var(--accent);}
+  .result-note{display:flex; gap:16px; align-items:baseline; margin-top:24px; padding:16px 20px; border-left:3px solid var(--accent); background:rgba(255,255,255,0.6); border-radius:0 12px 12px 0;}
+  .result-note .res{font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem; white-space:nowrap;}
+  .result-note .res.up{color:#1E7F4E;} .result-note .res.down{color:#D2382C;} .result-note .res.flat{color:var(--ink-soft);}
+  .result-note p{margin:0; font-size:0.92rem; color:var(--ink); max-width:none;}
   .exp-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:28px;}
   .exp{border:1px solid var(--line); border-radius:16px; padding:22px; background:rgba(255,255,255,0.5); display:flex; flex-direction:column; gap:10px;}
   .exp > *{margin:0;}
@@ -400,6 +404,7 @@
   <h2>The foundation: making content discoverable</h2>
   <p>Before adding anything, I made existing content findable. Every expand button moved to the bottom of its card and now says what it opens (“See all 6 trainings” rather than “See more”). Location and accessibility merged into one card. Opening hours, which had the highest “See more” click rate, are now fully visible.</p>
   <p>This layout became the base every other change plugs into.</p>
+  <div class="result-note"><span class="res up">+3.4%</span><p><strong>Result:</strong> bookings went up 3.4% once content was easier to reach.</p></div>
 </section>
 <div class="wide">
   <div class="pair">
@@ -413,6 +418,7 @@
   <p>On mobile, the top of the profile only showed a name, a photo, a specialty and sometimes a rating. Patients had to scroll the whole page to learn anything else.</p>
   <p>The new hero adds up to three rows right below the name: <strong>rating and review count</strong> (plus years of experience), <strong>the first visit reason and its price</strong>, and <strong>expertise</strong>, or the team size for an establishment. Each row only shows when the data exists, so there are no empty states. Tapping a row opens the same detail as the matching section further down.</p>
   <p>A sticky, swipeable navigation bar under the hero lists only the sections this profile actually has.</p>
+  <div class="result-note"><span class="res down">−4.1% / flat</span><p><strong>Result:</strong> the first version lowered bookings by 4.1%, the second was flat. The price row was tapped by only 7–8% of patients: more information up front isn’t more bookings.</p></div>
 </section>
 <div class="wide">
   <div class="pair">
@@ -425,8 +431,8 @@
   <h2>Zoom: a map you can actually see</h2>
   <p>Location is the first thing Italian patients look at, yet the map sat behind a “See more” that 3% of them opened. The map now shows on page load, with the “See itinerary” button next to it.</p>
   <p>Map consent remains mandatory: patients who haven't consented see a short prompt in the map area. In interviews, Italian patients accepted it readily when the value was clear.</p>
-  <p><strong>Spoiler:</strong> this is the change that taught us the most. See the results below.</p>
   <div class="placeholder">Screen to add: location card with the visible map and consent prompt</div>
+  <div class="result-note"><span class="res down">−5.6%</span><p><strong>Result:</strong> bookings with paid specialists dropped 5.6% (+1.3% for GPs and paediatricians), although patients ranked location first in interviews.</p></div>
 </section>
 
 <section class="wrap body-section">
@@ -444,6 +450,7 @@
     </div>
   </div>
   <div class="placeholder">Screens to add: Meet the team and Similar places nearby</div>
+  <div class="result-note"><span class="res flat">No effect</span><p><strong>Result:</strong> neither Meet the team nor Similar places nearby changed bookings significantly. Re-arranging and adding options didn’t change the decision.</p></div>
 </section>
 
 <!-- ============ ACT 3 ============ -->
@@ -460,24 +467,6 @@
     <li><strong>Guard rails:</strong> showing more content by default is monitored against page load time.</li>
   </ul>
   <p>In parallel, the team made the profile page more modular so we could iterate on it faster.</p>
-</section>
-
-<section class="wrap body-section">
-  <h2>Results</h2>
-  <p>Each change ran as its own A/B test in Italy, measured on private bookings.</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Change</th><th>Bookings</th><th>Reading</th></tr></thead>
-      <tbody>
-        <tr><td>Sticky “Book” button</td><td class="up">+5.1%</td><td>+11% more patients entering the booking funnel</td></tr>
-        <tr><td>Discoverability redesign</td><td class="up">+3.4%</td><td>Clearer, easier-to-reach “See all” buttons</td></tr>
-        <tr><td>Expertise section</td><td class="up">+2.9%</td><td>+3.3% for GPs and paediatricians (significant)</td></tr>
-        <tr><td>Hero summary rows</td><td>Flat to −4.1%</td><td>The price row was tapped by only 7–8% of patients</td></tr>
-        <tr><td>Section reorder, Meet the team, Similar places</td><td>No significant effect</td><td>Rearranging didn’t change the decision</td></tr>
-        <tr><td>Map visible on the profile</td><td>−5.6%</td><td>+1.3% for GPs and paediatricians</td></tr>
-      </tbody>
-    </table>
-  </div>
 </section>
 
 <section class="wrap body-section">

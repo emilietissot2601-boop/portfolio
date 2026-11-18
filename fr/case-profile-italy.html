@@ -124,6 +124,10 @@
   th, td{text-align:left; padding:12px 10px; border-bottom:1px solid var(--line);}
   th{font-family:'IBM Plex Mono', monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
   td.up{font-weight:600; color:var(--accent);}
+  .result-note{display:flex; gap:16px; align-items:baseline; margin-top:24px; padding:16px 20px; border-left:3px solid var(--accent); background:rgba(255,255,255,0.6); border-radius:0 12px 12px 0;}
+  .result-note .res{font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem; white-space:nowrap;}
+  .result-note .res.up{color:#1E7F4E;} .result-note .res.down{color:#D2382C;} .result-note .res.flat{color:var(--ink-soft);}
+  .result-note p{margin:0; font-size:0.92rem; color:var(--ink); max-width:none;}
   .exp-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:28px;}
   .exp{border:1px solid var(--line); border-radius:16px; padding:22px; background:rgba(255,255,255,0.5); display:flex; flex-direction:column; gap:10px;}
   .exp > *{margin:0;}
@@ -400,6 +404,7 @@
   <h2>La base : rendre le contenu trouvable</h2>
   <p>Avant d’ajouter quoi que ce soit, j’ai rendu le contenu existant facile à trouver. Chaque bouton d’ouverture est passé en bas de sa carte et dit ce qu’il ouvre (« Voir les 6 formations » plutôt que « Voir plus »). Localisation et accessibilité ont fusionné en une seule carte. Les horaires, qui avaient le plus fort taux de clic sur « Voir plus », sont désormais entièrement visibles.</p>
   <p>Cette mise en page est devenue la base sur laquelle tous les autres changements viennent se brancher.</p>
+  <div class="result-note"><span class="res up">+3,4 %</span><p><strong>Résultat :</strong> +3,4 % de rendez-vous une fois le contenu plus facile à atteindre.</p></div>
 </section>
 <div class="wide">
   <div class="pair">
@@ -413,6 +418,7 @@
   <p>Sur mobile, le haut du profil n’affichait qu’un nom, une photo, une spécialité et parfois une note. Il fallait parcourir toute la page pour en savoir plus.</p>
   <p>Le nouvel en-tête ajoute jusqu’à trois lignes sous le nom : <strong>la note et le nombre d’avis</strong> (avec les années d’expérience), <strong>le premier motif de consultation et son prix</strong>, et <strong>l’expertise</strong>, ou la taille de l’équipe pour un établissement. Chaque ligne n’apparaît que si la donnée existe : aucun état vide. Un tap ouvre le même détail que la section correspondante plus bas.</p>
   <p>Une barre de navigation fixe et swipeable sous l’en-tête liste uniquement les sections présentes sur ce profil.</p>
+  <div class="result-note"><span class="res down">−4,1 % / stable</span><p><strong>Résultat :</strong> la première version a fait baisser les rendez-vous de 4,1 %, la seconde est restée stable. La ligne prix n’a été touchée que par 7 à 8 % des patients : plus d’infos en haut ne fait pas plus de rendez-vous.</p></div>
 </section>
 <div class="wide">
   <div class="pair">
@@ -425,8 +431,8 @@
   <h2>Zoom : une carte qu’on voit vraiment</h2>
   <p>La localisation est la première chose que regardent les patients italiens, mais la carte était cachée derrière un « Voir plus » ouvert par 3 % d’entre eux. Elle s’affiche maintenant dès l’arrivée, avec le bouton « Voir l’itinéraire » juste à côté.</p>
   <p>Le consentement reste obligatoire : les patients qui ne l’ont pas encore donné voient un court message dans la zone de la carte. En entretien, les patients italiens l’acceptaient volontiers quand l’intérêt était clair.</p>
-  <p><strong>Spoiler :</strong> c’est le changement qui nous a le plus appris. Voir les résultats plus bas.</p>
   <div class="placeholder">Écran à ajouter : la carte de localisation avec la carte visible et le consentement</div>
+  <div class="result-note"><span class="res down">−5,6 %</span><p><strong>Résultat :</strong> les rendez-vous chez les spécialistes payants ont baissé de 5,6 % (+1,3 % pour les généralistes et pédiatres), alors que les patients plaçaient la localisation en tête en entretien.</p></div>
 </section>
 
 <section class="wrap body-section">
@@ -444,6 +450,7 @@
     </div>
   </div>
   <div class="placeholder">Écrans à ajouter : Meet the team et Similar places nearby</div>
+  <div class="result-note"><span class="res flat">Pas d’effet</span><p><strong>Résultat :</strong> ni Meet the team ni Similar places nearby n’ont changé significativement les rendez-vous. Réorganiser et proposer des alternatives n’a pas changé la décision.</p></div>
 </section>
 
 <!-- ============ ACTE 3 ============ -->
@@ -460,24 +467,6 @@
     <li><strong>Des garde-fous :</strong> afficher plus de contenu par défaut est surveillé au regard du temps de chargement.</li>
   </ul>
   <p>En parallèle, l’équipe a rendu la page profil plus modulaire pour pouvoir itérer plus vite.</p>
-</section>
-
-<section class="wrap body-section">
-  <h2>Résultats</h2>
-  <p>Chaque changement a fait l’objet de son propre A/B test en Italie, mesuré sur les rendez-vous privés.</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Changement</th><th>Rendez-vous</th><th>Lecture</th></tr></thead>
-      <tbody>
-        <tr><td>Bouton « Réserver » toujours visible</td><td class="up">+5,1 %</td><td>+11 % de patients entrant dans le parcours de réservation</td></tr>
-        <tr><td>Refonte de la lisibilité</td><td class="up">+3,4 %</td><td>Des boutons « Voir tout » plus clairs et plus accessibles</td></tr>
-        <tr><td>Section Expertise</td><td class="up">+2,9 %</td><td>+3,3 % pour les généralistes et pédiatres (significatif)</td></tr>
-        <tr><td>Lignes de résumé dans l’en-tête</td><td>Stable à −4,1 %</td><td>La ligne prix n’a été touchée que par 7 à 8 % des patients</td></tr>
-        <tr><td>Réorganisation des sections, Meet the team, Similar places</td><td>Pas d’effet significatif</td><td>Réorganiser n’a pas changé la décision</td></tr>
-        <tr><td>Carte visible sur le profil</td><td>−5,6 %</td><td>+1,3 % pour les généralistes et pédiatres</td></tr>
-      </tbody>
-    </table>
-  </div>
 </section>
 
 <section class="wrap body-section">
