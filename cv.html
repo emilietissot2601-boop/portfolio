@@ -71,6 +71,9 @@
     border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:12px 20px; border-radius:999px;
     display:inline-flex; align-items:center; gap:8px;
   }
+  .btn-secondary{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; cursor:pointer; border:1px solid var(--ink); background:transparent; color:var(--ink); padding:7px 14px; border-radius:999px; white-space:nowrap;}
+  .btn-secondary:hover{background:var(--ink); color:var(--paper);}
+  @media (max-width:560px){ .btn-secondary .lbl-long{display:none;} .btn-secondary .lbl-short{display:inline;} }
   .btn:hover{background:var(--accent); border-color:var(--accent);}
   .contact{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:32px; padding-top:24px; border-top:1px solid var(--line);}
   .contact .k{font-family:'IBM Plex Mono', monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); display:block;}
@@ -167,7 +170,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="back" href="index.html">← Back to portfolio</a>
-    <div style="display:flex; align-items:center; gap:20px;"><span class="wordmark">Emilie Tissot</span><div class="lang"><span>EN</span><a href="fr/cv.html" hreflang="fr" lang="fr">FR</a></div></div>
+    <div style="display:flex; align-items:center; gap:20px;"><button class="btn-secondary no-print" onclick="window.print()">↓ <span class="lbl-long">Download as PDF</span><span class="lbl-short" hidden>PDF</span></button><span class="wordmark">Emilie Tissot</span><div class="lang"><span>EN</span><a href="fr/cv.html" hreflang="fr" lang="fr">FR</a></div></div>
   </div>
 </header>
 
@@ -179,7 +182,6 @@
         <h1>Emilie Tissot</h1>
         <p class="role">Senior Product Designer · Paris</p>
       </div>
-      <button class="btn no-print" onclick="window.print()">↓ Download as PDF</button>
     </div>
     <blockquote class="about-quote">"Versatile and AI-augmented, I care about missions that matter."</blockquote>
     <p class="lead">Hi there! I'm Emilie, senior Product Designer with 8 years of experience. I've built my practice across photo tech and healthtech — two worlds where the product has to serve real people, fast and well. I like being involved across the whole cycle, from research to post-launch iteration, and I bring AI tools into my workflow to go further, faster.</p>
